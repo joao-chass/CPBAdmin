@@ -1,0 +1,36 @@
+<mat-toolbar class="example-toolbar"  color="ligth" >
+  <button mat-icon-button data-toggle="collapse" (click)="sidenav.open()"><mat-icon >menu</mat-icon></button>
+    <img src="./../../assets/logo.png" width="60px"  >
+
+  <mat-sidenav-container class="example-container" (backdropClick)="close('backdrop')">
+    <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose>
+
+
+      <div class="botao-fechar">
+        <button mat-button  color="accent" class="botao"  (click)="close('toggle button')">
+          <i class="material-icons closeIcon">close</i>
+        </button>
+      </div>
+
+
+
+      <div class="logo">
+        <img src="https://conselhodobrasil.org/wp-content/uploads/2020/07/logo-CPB-fundo-transparente-300x169.png" width="80px"  >
+      </div>
+
+      <hr>
+
+      <app-menu-rotas (click)="close('toggle button')" ></app-menu-rotas>
+
+
+
+    </mat-sidenav>
+
+
+  </mat-sidenav-container>
+
+  <div class="close-menu ">
+    <button matTooltip="Sair" mat-mini-fab color="warn" > <i class="material-icons">power_settings_new</i></button>
+  </div>
+
+</mat-toolbar>

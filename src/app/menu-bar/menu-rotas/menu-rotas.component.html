@@ -1,0 +1,18 @@
+
+      <ul class="navbar-nav mr-auto"  >
+        <span *ngFor="let rota of rotas">
+
+          <li class="nav-item" routerLinkActive="active">
+             <a class="nav-link" [routerLink]="rota.rota"> <i class="material-icons">{{rota.icone}}</i> {{rota.nome}} </a>
+          </li>
+        </span>
+
+        <hr>
+
+        <li >
+          <a class="nav-link " >  <i class="material-icons">power_settings_new</i> Sair</a>
+        </li>
+
+
+
+      </ul>
