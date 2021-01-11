@@ -1,13 +1,35 @@
 
 .container {
   display: flex;
-  justify-content: space-evenly;
-  padding: 50px;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  align-content: flex-start;
+  padding: 28px;
 }
 
-img {
-  width: 700px;
-  opacity: 0.5;
+.item{
+  width: 30%;
+  padding: 20px;
 }
+.mat-card {
+  background: #f1f1f1;
+  color: #212020;
+}
+
+.butto-news {
+  position: absolute;
+  top: 250px;
+  left: 220px;
+}
+
+.criar {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+
 
 

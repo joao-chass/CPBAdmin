@@ -1,3 +1,4 @@
+import { CriarNoticiasComponent } from './noticias/criar-noticias/criar-noticias.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { RelatorioComponent } from './relatorio/relatorio.component';
 import { NoticiasComponent } from './noticias/noticias.component';
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'edicao-usuario', component: UsuariosComponent },
   { path: 'relatorio', component: RelatorioComponent },
-  { path: 'criacao-noticia', component: NoticiasComponent },
+  { path: 'noticia', component: NoticiasComponent },
+  { path: 'criacao-noticia', component: CriarNoticiasComponent },
   { path: 'criar-votacao', component: VotacaoComponent },
   { path: 'transparencia', component: TransparenciaComponent },
 ];

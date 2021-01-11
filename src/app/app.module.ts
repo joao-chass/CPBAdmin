@@ -55,6 +55,8 @@ import { NoticiasComponent } from './noticias/noticias.component';
 import { VotacaoComponent } from './votacao/votacao.component';
 import { TransparenciaComponent } from './transparencia/transparencia.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CriarNoticiasComponent } from './noticias/criar-noticias/criar-noticias.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -66,11 +68,14 @@ import { HttpClientModule } from '@angular/common/http';
     RelatorioComponent,
     NoticiasComponent,
     VotacaoComponent,
-    TransparenciaComponent
+    TransparenciaComponent,
+    CriarNoticiasComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatAutocompleteModule,

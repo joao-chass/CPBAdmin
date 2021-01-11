@@ -21,7 +21,7 @@ export class MenuRotasComponent implements OnInit {
       icone: 'insert_chart_outlined',
       nome: 'Relatorios'
     },{
-      rota: '/criacao-noticia',
+      rota: '/noticia',
       icone: 'book',
       nome: 'Noticia'
     },{
