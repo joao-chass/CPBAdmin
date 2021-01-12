@@ -22,13 +22,13 @@
 
     </div>
 
+    <button mat-raised-button color="warn" class="send" (click)="publicaNoticia()">
+      Publicar
+    </button>
   </span>
 
   <span *ngIf="!previewData.imagem" >
     <img src="./../../../../assets/startnews.png" alt="" srcset="" height="300px" style="position: relative;  top: 17px;">
   </span>
 
-  <button mat-fab color="accent" (click)="publicaNoticia()">
-    <mat-icon>bookmark</mat-icon>
-  </button>
 </cdk-virtual-scroll-viewport>

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api: 'https://grupocpb.org/api'
+  api: 'http://localhost:3000/api'
 };
