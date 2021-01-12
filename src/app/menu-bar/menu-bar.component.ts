@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu-bar',
@@ -11,7 +12,7 @@ export class MenuBarComponent implements OnInit {
 
   reason = '';
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
   }
@@ -19,6 +20,11 @@ export class MenuBarComponent implements OnInit {
   close(reason: string) {
     this.reason = reason;
     this.sidenav.close();
+  }
+
+  logout() {
+    localStorage.clear();
+    this.route.navigateByUrl('/login');
   }
 
 }

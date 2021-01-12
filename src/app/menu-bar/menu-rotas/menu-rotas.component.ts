@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu-rotas',
@@ -34,9 +35,15 @@ export class MenuRotasComponent implements OnInit {
       nome: 'Transparencia'
     }
   ]
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
   }
+
+  logout() {
+    localStorage.clear();
+    this.route.navigateByUrl('/login');
+  }
+
 
 }

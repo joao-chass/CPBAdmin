@@ -60,6 +60,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TextEditorComponent } from './component/text-editor/text-editor.component';
 import { PreviewComponent } from './noticias/criar-noticias/preview/preview.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { LoginComponent } from './login/login.component';
+import { RecuperarSenhaComponent } from './login/recuperar-senha/recuperar-senha.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +76,9 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     TransparenciaComponent,
     CriarNoticiasComponent,
     TextEditorComponent,
-    PreviewComponent
+    PreviewComponent,
+    LoginComponent,
+    RecuperarSenhaComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,42 @@
+<div class="body">
+
+
+  <div class="login-card">
+    <mat-card class="card">
+
+      <img src="../../assets/logo.png" alt="" width="90px">
+      <div class="dot"></div>
+
+      <form *ngIf="!emailInformado"  >
+        <mat-form-field color="accent" class="example-full-width">
+          <mat-label>Email</mat-label>
+
+          <input name="email" [(ngModel)]="recuperar.email"  type="email" matInput placeholder="email@exemplo.com">
+          <mat-icon matSuffix>alternate_email</mat-icon>
+        </mat-form-field>
+
+        <button mat-raised-button color="accent" (click)="recupera()">Enviar</button>
+      </form>
+
+      <form *ngIf="emailInformado"  >
+        <mat-form-field color="accent" class="example-full-width">
+          <mat-label>Codigo</mat-label>
+
+          <input name="codigo" [(ngModel)]="recuperar.codigo"  type="number" matInput placeholder="codigo">
+          <mat-icon matSuffix>qr_code_scanner</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field color="accent" class="example-full-width">
+          <mat-label>Nova senha</mat-label>
+
+          <input name="nova senha" [(ngModel)]="recuperar.novaSenha"  type="password" matInput placeholder="nova senha">
+          <mat-icon matSuffix>vpn_key</mat-icon>
+        </mat-form-field>
+
+        <button mat-raised-button color="accent" (click)="resetar()">Alterar senha</button>
+      </form>
+
+
+    </mat-card>
+  </div>
+</div>

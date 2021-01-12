@@ -1,0 +1,40 @@
+<div class="body">
+
+
+  <div class="login-card">
+    <mat-card class="card">
+
+      <img src="../../assets/logo.png" alt="" width="90px">
+      <div class="dot"></div>
+
+      <form >
+        <mat-form-field color="accent" class="example-full-width">
+          <mat-label>Email</mat-label>
+
+          <input name="email" [(ngModel)]="credenciais.email"  type="email" matInput placeholder="email@exemplo.com">
+          <mat-icon matSuffix>alternate_email</mat-icon>
+        </mat-form-field>
+      </form>
+
+      <form >
+        <mat-form-field color="accent" class="example-full-width">
+          <mat-label>Senha</mat-label>
+          <input name="senha" [(ngModel)]="credenciais.senha" type="password" matInput placeholder="senha">
+          <mat-icon matSuffix>vpn_key</mat-icon>
+        </mat-form-field>
+      </form>
+
+      <div class="crdenciaisInvalidas" *ngIf="cerdenciaisInvalidas" >
+        Email ou senha inválida
+      </div>
+
+      <button mat-raised-button color="accent" (click)="loggar()">Logar</button>
+
+      <br>
+        <div (click)="navegar()">
+          Esqueceu a senha ?
+        </div>
+
+    </mat-card>
+  </div>
+</div>

@@ -12,9 +12,13 @@ export class NoticiasService {
 
   constructor(private http: HttpClient) { }
 
+  getMaterias(): Observable<any>{
+    return this.http.get(`${this.api}/noticia`)
+  }
+
   criarMateria(noticia): Observable<any> {
     return this.http.post(`${this.api}/noticia`, {
-       noticia_titulo: noticia.titulo,
+      noticia_titulo: noticia.titulo,
       noticia_conteudo: noticia.noticia,
       noticia_data: noticia.data,
       noticia_imagem: noticia.imagem,

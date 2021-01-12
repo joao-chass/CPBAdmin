@@ -1,3 +1,4 @@
+import { NoticiasService } from './services/noticias.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./noticias.component.scss']
 })
 export class NoticiasComponent implements OnInit {
-
-  constructor() { }
+  noticia = new Noticia();
+  constructor(private noticiasService: NoticiasService) { }
 
   ngOnInit(): void {
+    this.noticiasService.getMaterias().subscribe(res => {
+      this.noticia = res;
+    })
   }
 
+
+}
+
+class Noticia {
+  noticiaid: Number;
+  titulo: String;
+  noticiadata: String;
+  imagem: string;
+  categoria: string;
 }
