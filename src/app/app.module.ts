@@ -57,6 +57,9 @@ import { TransparenciaComponent } from './transparencia/transparencia.component'
 import { HttpClientModule } from '@angular/common/http';
 import { CriarNoticiasComponent } from './noticias/criar-noticias/criar-noticias.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TextEditorComponent } from './component/text-editor/text-editor.component';
+import { PreviewComponent } from './noticias/criar-noticias/preview/preview.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -69,7 +72,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NoticiasComponent,
     VotacaoComponent,
     TransparenciaComponent,
-    CriarNoticiasComponent
+    CriarNoticiasComponent,
+    TextEditorComponent,
+    PreviewComponent
   ],
   imports: [
     BrowserModule,
@@ -111,6 +116,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatSnackBarModule,
     MatTooltipModule,
     MatPaginatorModule,
+    ScrollingModule,
     MatSortModule,
     MatTableModule
   ],

@@ -105,3 +105,14 @@
     filter: grayscale(0%);
   }
 }
+
+.studio {
+  height: 53px;
+    width: 53px;
+    background-color: #fc0a0a;
+    border-radius: 50%;
+    display: inline-block;
+    left: -14px;
+    top: 2px;
+    position: relative;
+}

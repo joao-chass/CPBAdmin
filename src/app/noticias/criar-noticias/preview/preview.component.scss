@@ -1,0 +1,51 @@
+.imagem-preview {
+  width: 300px;
+  height: 180px;
+}
+
+.position {
+  position: relative;
+  left: -14px;
+}
+
+.body-news {
+  padding: 6px;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.data-preview {
+  font-size: 11px;
+  padding: 12px;
+  display: flex;
+  flex-direction: row;
+  color: #6d6969;
+}
+
+.tema-preview {
+  border: #c8c8c8 solid 2px;
+  border-radius: 5px;
+  padding: 1px;
+  left: 9px;
+  position: relative;
+  top: -5px;
+}

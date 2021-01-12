@@ -2,16 +2,16 @@
 
   <div class="texto-boa-vindas">
     <mat-card class="card-eidt">
-      <h1>Criar uma nova materia no portal <b>CPB</b> !</h1>
+      <h1>Criar materia no portal <b>CPB</b> !</h1>
 
-      <button mat-raised-button color="warn">Imagem <span class="material-icons">
+      <button mat-raised-button color="warn" (click)="fileInput.click()">Imagem <span class="material-icons">
         add_photo_alternate
         </span></button>
 
       <form class="example-form">
         <mat-form-field class="example-full-width" color="accent">
           <mat-label>Titulo</mat-label>
-          <input type="text" matInput placeholder="Informe o titulo">
+          <input type="text" matInput placeholder="Informe o titulo" name="text" [(ngModel)]="titulo">
           <mat-icon matSuffix>mode_edit</mat-icon>
         </mat-form-field>
       </form>
@@ -21,24 +21,34 @@
           <input type="text"
                  placeholder="Tema"
                  matInput
+                 [(ngModel)]="previewData.tema"
                  [formControl]="myControl"
                  [matAutocomplete]="auto">
-          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" >
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option" >
               {{option}}
             </mat-option>
           </mat-autocomplete>
         </mat-form-field>
       </form>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>Address 2</mat-label>
-        <textarea matInput></textarea>
-      </mat-form-field>
+      <app-text-editor (envioData)='teste($event)'></app-text-editor>
 
     </mat-card>
   </div>
 
-  <img src="./../../../assets/preview.png" alt="" srcset="" width="650px">
+  <div class="view">
+
+
+
+    <img src="./../../../assets/preview.png" alt="" srcset="" width="500px">
+    <app-preview class="preview" [(previewData)]="previewData"></app-preview>
+
+
+
+  </div>
 
 </div>
+
+<input hidden #fileInput type="file" id="file" accept="image/*" (change)="onUploadChange($event)"
+style="display: none">

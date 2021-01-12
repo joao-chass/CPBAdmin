@@ -1,0 +1,25 @@
+<div id="container" >
+  <fieldset  >
+
+
+      <button class="fontStyle italic" onclick="document.execCommand('italic',false,null);" title="Italicize Highlighted Text"></button>
+      <button class="fontStyle bold" onclick="document.execCommand( 'bold',false,null);" title="Bold Highlighted Text"></button>
+      <button class="fontStyle underline" onclick="document.execCommand( 'underline',false,null);"></button>
+
+     <input class="color-apply" type="color" (change)="chooseColor()" [(ngModel)]="cor" id="myColor">
+
+
+
+
+
+</fieldset>
+
+<div id="editor1" contenteditable="true" data-text="Enter comment...." ></div>
+
+<div class="preview">
+  <button mat-raised-button color="primary" (click)="enviar()">
+    Preivew
+  </button>
+</div>
+
+</div>
