@@ -1,1 +1,101 @@
-<p>transparencia works!</p>
+<div class="transparencia">
+  <div>
+    <mat-card class="novaTranparencia">
+      <form class="example-form">
+        <mat-form-field appearance="fill" color="accent" class="input-transparencia">
+          <mat-label>Valor</mat-label>
+          <input type="number" matInput placeholder="informe o valor" name='valor' [(ngModel)]="trandsparencia.valor">
+          <mat-icon matSuffix>attach_money</mat-icon>
+        </mat-form-field>
+      </form>
+
+      <form class="example-form">
+        <mat-form-field appearance="fill" color="accent" class="input-transparencia">
+          <mat-label>Empresa</mat-label>
+          <input type="tel" matInput placeholder="informe a Empresa" name='empresa'
+            [(ngModel)]="trandsparencia.empresa">
+          <mat-icon matSuffix>apartment</mat-icon>
+        </mat-form-field>
+      </form>
+
+      <form class="example-form">
+        <mat-form-field appearance="fill" color="accent" class="input-transparencia">
+          <mat-label>Informe a data</mat-label>
+          <input matInput [matDatepicker]="data" name='data' [(ngModel)]="trandsparencia.data">
+          <mat-datepicker-toggle matSuffix [for]="data"></mat-datepicker-toggle>
+          <mat-datepicker #data></mat-datepicker>
+        </mat-form-field>
+      </form>
+
+      <form class="example-form">
+        <mat-form-field appearance="fill" color="accent" class="input-transparencia">
+          <mat-label>Operação</mat-label>
+          <mat-select name='operacao' [(ngModel)]="trandsparencia.operacao">
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+          <mat-icon matSuffix>point_of_sale</mat-icon>
+        </mat-form-field>
+      </form>
+
+      <button mat-flat-button color="accent" (click)="novoDado()">Enviar</button>
+    </mat-card>
+  </div>
+
+  <div>
+    <mat-card class="view-tranparencia">
+      <mat-form-field appearance="fill" color="accent" class="input-transparencia">
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <br>
+
+      <table id="customers">
+        <tr>
+          <th>Data</th>
+          <th>Empresa</th>
+          <th>Valor</th>
+          <th>
+            Editar
+          </th>
+        </tr>
+        <tbody *ngFor="let item of dadosTransparencia">
+          <tr>
+            <td>
+              {{item.data_transparencia}}
+            </td>
+            <td>
+              {{item.empresa}}
+            </td>
+            <td [class]="item.operacao == 'entrada' ? 'credito' : 'debito' ">
+              {{ item.operacao == 'entrada' ? '+' : '-' }} {{item.valor | currency: 'BRL'}}
+            </td>
+            <td>
+              <button mat-button>
+                <mat-icon>edit</mat-icon>
+
+              </button>
+            </td>
+          </tr>
+        </tbody>
+
+
+        <td>
+          <b>
+            Total:
+          </b>
+        </td>
+        <td>
+        </td>
+        <td *ngIf="calculando">
+          {{total |currency: 'BRL'}}
+        </td>
+
+      </table>
+    </mat-card>
+  </div>
+</div>

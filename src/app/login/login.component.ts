@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    this.route.navigateByUrl('/home')
   }
 
   navegar() {
@@ -27,7 +28,7 @@ export class LoginComponent implements OnInit {
 
   loggar() {
     this.auth.logar(this.credenciais).subscribe(res => {
-      localStorage.setItem('dados', res.usuarios);
+      localStorage.setItem('dados', res.usuarios.usuarioid);
       this.token.setToken(res.token);
       this.route.navigateByUrl('/home')
     }, err => {
