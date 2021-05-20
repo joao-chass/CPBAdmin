@@ -12,30 +12,59 @@
         <mat-form-field color="accent" appearance="outline" class="example-full-width">
           <mat-label>Email</mat-label>
 
-          <input name="email" [(ngModel)]="credenciais.email"  type="email" matInput placeholder="email@exemplo.com">
-          <mat-icon matSuffix>alternate_email</mat-icon>
+          <input name="email" 
+          [(ngModel)]="credenciais.email"  
+          type="email" 
+          [formControl]="email" 
+          required 
+          matInput 
+          placeholder="email@exemplo.com"
+          >
+
+          <mat-icon matSuffix [color]="cerdenciaisInvalidas ? 'warn' : ''">
+            {{cerdenciaisInvalidas ? 'report_problem' : ' alternate_email'}}
+          </mat-icon>
+
+          <mat-error *ngIf="email.invalid">{{getErrorMessage('email')}}</mat-error>
         </mat-form-field>
       </form>
 
       <form >
         <mat-form-field color="accent" appearance="outline" class="example-full-width">
           <mat-label>Senha</mat-label>
-          <input name="senha" [(ngModel)]="credenciais.senha" type="password" matInput placeholder="senha">
-          <mat-icon matSuffix>vpn_key</mat-icon>
+
+          <input name="senha" 
+          [(ngModel)]="credenciais.senha"
+          type="password" 
+          [formControl]="senha" 
+          required 
+          matInput 
+          placeholder="senha"
+          >
+
+          <mat-icon matSuffix [color]="cerdenciaisInvalidas ? 'warn' : ''">
+           {{cerdenciaisInvalidas ? 'report_problem' : 'vpn_key'}}
+          </mat-icon>
+
+          <mat-error *ngIf="senha.invalid">{{getErrorMessage('senha')}}</mat-error>
         </mat-form-field>
       </form>
 
-      <div class="crdenciaisInvalidas" *ngIf="cerdenciaisInvalidas" >
-        Email ou senha inválida
-      </div>
+      <div class="crdenciaisInvalidas"  *ngIf="cerdenciaisInvalidas">
+      <mat-chip-list >
+        <mat-chip selected color="warn">
+          Email ou senha inválida 
+          <mat-icon aria-hidden="false" aria-label="Example home icon">report_problem</mat-icon>
+        </mat-chip>
+      </mat-chip-list>
+    </div>
 
       <button mat-raised-button color="accent" (click)="loggar()">Logar</button>
 
       <br>
-        <div (click)="navegar()" class="recuperar-senha">
+      <button mat-button color="basic" (click)="navegar()" class="recuperar-senha">
           Esqueceu a senha ?
-        </div>
-
+      </button>
     </mat-card>
   </div>
 

@@ -21,8 +21,8 @@
           <mat-label>Email</mat-label>
 
           <input name="email" [(ngModel)]="recuperar.email" [formControl]="email" required type="email" matInput placeholder="email@exemplo.com">
-          <mat-icon matSuffix [color]="email.invalid ? 'warn' : 'accent'" >alternate_email</mat-icon>
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          <mat-icon matSuffix [color]="email.invalid ? '' : 'accent'" >alternate_email</mat-icon>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage('email')}}</mat-error>
         </mat-form-field>
 
         <button mat-raised-button color="accent" (click)="recupera()">Recuperar</button>
@@ -32,16 +32,39 @@
         <mat-form-field color="accent" appearance="outline" class="example-full-width">
           <mat-label>Codigo</mat-label>
 
-          <input name="codigo" [(ngModel)]="recuperar.codigo"  type="number" matInput placeholder="codigo">
+          <input name="codigo" 
+          [(ngModel)]="recuperar.codigo"  
+          [formControl]="codigo" 
+          required
+          matInput 
+          placeholder="codigo"
+          >
           <mat-icon matSuffix>qr_code_scanner</mat-icon>
+          <mat-error *ngIf="codigo.invalid">{{getErrorMessage('codigo')}}</mat-error>
         </mat-form-field>
 
         <mat-form-field color="accent" appearance="outline" class="example-full-width">
           <mat-label>Nova senha</mat-label>
 
-          <input name="nova senha" [(ngModel)]="recuperar.novaSenha"  type="password" matInput placeholder="nova senha">
+          <input name="nova senha" 
+          [(ngModel)]="recuperar.novaSenha"  
+          type="password"
+          [formControl]="novaSenha" 
+          required 
+          matInput 
+          placeholder="nova senha">
           <mat-icon matSuffix>vpn_key</mat-icon>
+          <mat-error *ngIf="novaSenha.invalid">{{getErrorMessage('senha')}}</mat-error>
         </mat-form-field>
+
+        <div class="crdenciaisInvalidas" *ngIf="codigoInvalido">
+          <mat-chip-list >
+            <mat-chip selected color="warn">
+              {{msgErroRestSeha}}
+              <mat-icon aria-hidden="false" aria-label="Example home icon">report_problem</mat-icon>
+            </mat-chip>
+          </mat-chip-list>
+        </div>
 
         <button mat-raised-button color="accent" (click)="resetar()">Alterar senha</button>
       </form>

@@ -12,7 +12,11 @@ export class RecuperarSenhaComponent implements OnInit {
   recuperar = new RecuperarSenha();
   emailInformado: Boolean;
   validaEmail: Boolean;
+  codigoInvalido: Boolean;
   email = new FormControl('', [Validators.required, Validators.email]);
+  codigo = new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]);
+  novaSenha = new FormControl('', [Validators.required, Validators.minLength(4)]);
+  msgErroRestSeha: string;
 
   constructor(private auth: AutenticacaoService, private route: Router) { }
 
@@ -30,23 +34,53 @@ export class RecuperarSenhaComponent implements OnInit {
 
   }
 
-  getErrorMessage() {
-    console.log(this.email.invalid);
-    if (this.email.hasError('required')) {
-      return 'Você deve informar se e-mail';
+  getErrorMessage(campo) {
+    //validação email
+    if(campo == 'email') {
+      if (this.email.hasError('required')) {
+        return 'Você deve informar e-mail';
+  
+  
+      }
+  
+      return this.email.hasError('email') ? 'E-mail invalido' : '';
+    } 
+    //validação codigo
+    else if (campo == 'codigo') {
+      
+      if (this.codigo.hasError('required')) {
+        return 'Você deve informar o codigo';
+      } 
+  
+      return this.codigo.hasError('minLength') || this.codigo.hasError('maxLength') ? '' : 'O código esta invalido';
+    } 
+    //validação senha
+    else if (campo == 'senha') {
+      if (this.novaSenha.hasError('required')) {
+        return 'Você deve informar a nova senha';
 
-
+      }
+  
+      return this.novaSenha.hasError('minLength') ? '' : 'A senha deve conter no minimo 4 carteres';
     }
-
-    return this.email.hasError('email') ? 'E-mail invalido' : '';
+   
   }
 
   resetar() {
-    this.auth.resetar(this.recuperar).subscribe(res => {
-      console.log(res);
-      this.route.navigateByUrl('/login')
-
-    })
+    if(this.novaSenha.valid && this.codigo.valid) {
+      this.auth.resetar(this.recuperar).subscribe(res => {
+        console.log(res);
+        this.route.navigateByUrl('/login')
+  
+      }, err => {
+        this.msgErroRestSeha = err.error.message
+        this.codigoInvalido = true;
+        this.codigo.setErrors({'incorrect': true});
+      })
+    } else {
+      this.codigo.markAllAsTouched();
+      this.novaSenha.markAllAsTouched();
+    }
   }
 
 }

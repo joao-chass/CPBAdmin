@@ -68,8 +68,14 @@
 }
 
 .crdenciaisInvalidas {
-  color: red;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-content: center;
+  margin-bottom: 12px;
+  align-items: flex-start;
+
 }
 
 .card {
