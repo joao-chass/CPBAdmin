@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'transparencia', component: TransparenciaComponent, canActivate: [AuthGuardService] },
 
   //volutarios
-  { path: 'voluntario-cadastro/token', component: VolutarioCadastroComponent },
+  { path: 'voluntario-cadastro/:token', component: VolutarioCadastroComponent },
 
 ];
 

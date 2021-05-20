@@ -1,0 +1,66 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+}
+
+.card-formulario {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    background-color: #ffffff00;
+    align-items: center;
+}
+
+.example-header-image {
+    background-image: url("https://www.pinclipart.com/picdir/big/559-5594866_necktie-drawing-vector-round-avatar-user-icon-png.png");
+    background-size: cover;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+td {
+    padding-right: 8px;
+}
+
+mat-slider {
+    width: 100%;
+}
+
+::ng-deep .mat-slider-wrapper {
+    .mat-slider-thumb-label {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        right: -24px;
+        top: -67px;
+        transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1),
+            border-radius 400ms cubic-bezier(0.25, 0.8, 0.25, 1),
+            background-color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+}
+
+// ::ng-deep .mat-slider-wrapper { .mat-slider-horizontal .mat-slider-thumb-label {
+//     right: -24px;
+//     top: -67px;
+//     transform: translateY(26px) scale(0.01) rotate(
+// 45deg
+// );
+// }}
