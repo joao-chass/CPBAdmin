@@ -1,14 +1,15 @@
-<div class="body">
-
+<div id="background"></div>
+<div class="login">
 
   <div class="login-card">
     <mat-card class="card">
 
       <img src="../../assets/logo.png" alt="" width="90px">
-      <div class="dot"></div>
 
       <form >
-        <mat-form-field color="accent" class="example-full-width">
+
+
+        <mat-form-field color="accent" appearance="outline" class="example-full-width">
           <mat-label>Email</mat-label>
 
           <input name="email" [(ngModel)]="credenciais.email"  type="email" matInput placeholder="email@exemplo.com">
@@ -17,7 +18,7 @@
       </form>
 
       <form >
-        <mat-form-field color="accent" class="example-full-width">
+        <mat-form-field color="accent" appearance="outline" class="example-full-width">
           <mat-label>Senha</mat-label>
           <input name="senha" [(ngModel)]="credenciais.senha" type="password" matInput placeholder="senha">
           <mat-icon matSuffix>vpn_key</mat-icon>
@@ -31,10 +32,31 @@
       <button mat-raised-button color="accent" (click)="loggar()">Logar</button>
 
       <br>
-        <div (click)="navegar()">
+        <div (click)="navegar()" class="recuperar-senha">
           Esqueceu a senha ?
         </div>
 
     </mat-card>
+  </div>
+
+
+  <div class="art">
+   <h1> Bem vindo (a) <br/>
+     a Plataforma CPB </h1>
+
+     <p>
+      Essa área é destinada aos voluntários do Grupo CPB.
+     </p>
+
+     <p>
+       Pera ai, você não sabe o que é o grupo CPB ?
+       <a href="https://conselhodobrasil.org/sobrenos/" target="_blank"> Clique aqui e saiba mais !</a>
+     </p>
+
+     <p> Faça também o download do nosso APP nas lojas</p>
+
+     <a href="https://play.google.com/store/apps/details?id=org.cpb.br" target="_blank">
+      <img src="../../assets/mobile-store.png" width="180px" >
+    </a>
   </div>
 </div>

@@ -1,3 +1,4 @@
+import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AutenticacaoService } from './../service/autenticacao.service';
 import { Component, OnInit } from '@angular/core';
@@ -10,6 +11,8 @@ import { Component, OnInit } from '@angular/core';
 export class RecuperarSenhaComponent implements OnInit {
   recuperar = new RecuperarSenha();
   emailInformado: Boolean;
+  validaEmail: Boolean;
+  email = new FormControl('', [Validators.required, Validators.email]);
 
   constructor(private auth: AutenticacaoService, private route: Router) { }
 
@@ -17,11 +20,25 @@ export class RecuperarSenhaComponent implements OnInit {
   }
 
   recupera() {
-    this.auth.recuperarSenha(this.recuperar).subscribe(res => {
-      this.emailInformado = true;
-      console.log(res);
+    if(this.recuperar.email) {
+      this.auth.recuperarSenha(this.recuperar).subscribe(res => {
+        this.emailInformado = true;
+        console.log(res);
 
-    })
+      })
+    }
+
+  }
+
+  getErrorMessage() {
+    console.log(this.email.invalid);
+    if (this.email.hasError('required')) {
+      return 'Você deve informar se e-mail';
+
+
+    }
+
+    return this.email.hasError('email') ? 'E-mail invalido' : '';
   }
 
   resetar() {

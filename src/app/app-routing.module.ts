@@ -1,3 +1,4 @@
+import { VolutarioCadastroComponent } from './volutario/volutario-cadastro/volutario-cadastro.component';
 import { LoginComponent } from './login/login.component';
 import { CriarNoticiasComponent } from './noticias/criar-noticias/criar-noticias.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
@@ -20,8 +21,16 @@ const routes: Routes = [
   { path: 'relatorio', component: RelatorioComponent, canActivate: [AuthGuardService] },
   { path: 'noticia', component: NoticiasComponent, canActivate: [AuthGuardService] },
   { path: 'criacao-noticia', component: CriarNoticiasComponent, canActivate: [AuthGuardService] },
+
+  //votação
   { path: 'criar-votacao', component: VotacaoComponent, canActivate: [AuthGuardService] },
+
+  //Trasparencia
   { path: 'transparencia', component: TransparenciaComponent, canActivate: [AuthGuardService] },
+
+  //volutarios
+  { path: 'voluntario-cadastro/token', component: VolutarioCadastroComponent },
+
 ];
 
 @NgModule({

@@ -62,6 +62,8 @@ import { PreviewComponent } from './noticias/criar-noticias/preview/preview.comp
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { LoginComponent } from './login/login.component';
 import { RecuperarSenhaComponent } from './login/recuperar-senha/recuperar-senha.component';
+import { VolutarioComponent } from './volutario/volutario.component';
+import { VolutarioCadastroComponent } from './volutario/volutario-cadastro/volutario-cadastro.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +80,9 @@ import { RecuperarSenhaComponent } from './login/recuperar-senha/recuperar-senha
     TextEditorComponent,
     PreviewComponent,
     LoginComponent,
-    RecuperarSenhaComponent
+    RecuperarSenhaComponent,
+    VolutarioComponent,
+    VolutarioCadastroComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,13 @@
-<div class="body">
+<div class="voltar-login">
+  <button mat-button color="accent" routerLink="/login" >
+  <span class="material-icons">
+    arrow_back
+  </span>
+
+  Voltar para o login
+  </button>
+</div>
+<div class="login">
 
 
   <div class="login-card">
@@ -8,25 +17,26 @@
       <div class="dot"></div>
 
       <form *ngIf="!emailInformado"  >
-        <mat-form-field color="accent" class="example-full-width">
+        <mat-form-field color="accent" appearance="outline" class="example-full-width">
           <mat-label>Email</mat-label>
 
-          <input name="email" [(ngModel)]="recuperar.email"  type="email" matInput placeholder="email@exemplo.com">
-          <mat-icon matSuffix>alternate_email</mat-icon>
+          <input name="email" [(ngModel)]="recuperar.email" [formControl]="email" required type="email" matInput placeholder="email@exemplo.com">
+          <mat-icon matSuffix [color]="email.invalid ? 'warn' : 'accent'" >alternate_email</mat-icon>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
         </mat-form-field>
 
-        <button mat-raised-button color="accent" (click)="recupera()">Enviar</button>
+        <button mat-raised-button color="accent" (click)="recupera()">Recuperar</button>
       </form>
 
       <form *ngIf="emailInformado"  >
-        <mat-form-field color="accent" class="example-full-width">
+        <mat-form-field color="accent" appearance="outline" class="example-full-width">
           <mat-label>Codigo</mat-label>
 
           <input name="codigo" [(ngModel)]="recuperar.codigo"  type="number" matInput placeholder="codigo">
           <mat-icon matSuffix>qr_code_scanner</mat-icon>
         </mat-form-field>
 
-        <mat-form-field color="accent" class="example-full-width">
+        <mat-form-field color="accent" appearance="outline" class="example-full-width">
           <mat-label>Nova senha</mat-label>
 
           <input name="nova senha" [(ngModel)]="recuperar.novaSenha"  type="password" matInput placeholder="nova senha">
@@ -39,4 +49,44 @@
 
     </mat-card>
   </div>
+
+  <div class="art">
+    <span *ngIf="!emailInformado">
+
+
+    <h1> Não acredito , <img src="../../../assets/esqueceu.png" width="80px" >
+       <br/>
+     esqueceu a senha de novo ? </h1>
+
+
+
+      <p>
+       Ok vamos alterar essa senha, coloque o seu e-mail.
+      </p>
+
+    </span>
+
+    <span *ngIf="emailInformado">
+
+
+      <h1> Email enviado para
+         <br/>
+        {{recuperar.email}} </h1>
+
+
+
+        <p>
+          Em alguns casos o e-mail vai direto para o SPAM ou Lixo  <br />
+          eletronico não esqueça de dar uma olhada
+          <span class="material-icons">
+            delete_forever
+            </span>
+        </p>
+
+      </span>
+
+   </div>
+
+  <div id="background"></div>
+
 </div>

@@ -1,3 +1,25 @@
+.login {
+  display: flex;
+  justify-content: space-around;
+  align-content: stretch;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+
+.voltar-login {
+  position: absolute;
+  margin-top: 18px;
+  margin-left: 5px;
+  color: white;
+  font-size: 22px;
+
+  i {
+    padding: 4px 24px 0px 0px;
+  }
+}
+
 .login-card{
   display: flex;
   flex-direction: column;
@@ -5,7 +27,15 @@
   justify-content: center;
   align-items: center;
   align-content: center;
-  margin-top:10%;
+}
+
+#background {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 50%;
+  height: 100%;
+  background-color: #3227b0;
 }
 
 .body {
@@ -25,29 +55,46 @@
   text-align: center;
 }
 
+.art {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-content: center;
+  color: white;
+  z-index: 2;
+  align-items: flex-start;
+  font-size: 1vw;
+
+  p {
+    margin-top: 8px;
+    font-weight: 100;
+  }
+
+  h1 {
+    font-size: 3vw;
+    line-height: 3vw;
+    font-weight: 600;
+  }
+
+  a {
+    color: #00fbb5;
+    font-weight: 600;
+  }
+}
+
 .card {
   width: 300px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
-  background-color: #201a30;
+  background-color: #ffffff00;
   img {
     position: relative;
     left: 107px;
     top: -42px;
     z-index: 5;
   }
-  .dot {
-    position: absolute;
-    left: 100px;
-    top: -82px;
-    height: 139px;
-    width: 139px;
-    background-color: #69f0ae;
-    border-radius: 50%;
-    display: inline-block;
-    border-color: #1b0f77;
-    border-style: solid;
-  }
+
 }
