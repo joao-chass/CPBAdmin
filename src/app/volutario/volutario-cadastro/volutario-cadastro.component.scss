@@ -4,8 +4,9 @@
     align-content: stretch;
     flex-wrap: nowrap;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     height: 100%;
+    margin-top: 55px;
 }
 
 .card-formulario {
@@ -18,7 +19,7 @@
 }
 
 .example-header-image {
-    background-image: url("https://www.pinclipart.com/picdir/big/559-5594866_necktie-drawing-vector-round-avatar-user-icon-png.png");
+    background-image: url("https://cdn.dribbble.com/users/3162310/screenshots/9168149/image.gif");
     background-size: cover;
 }
 
@@ -40,27 +41,18 @@ mat-slider {
     width: 100%;
 }
 
-::ng-deep .mat-slider-wrapper {
-    .mat-slider-thumb-label {
-        display: none;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        right: -24px;
-        top: -67px;
-        transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1),
-            border-radius 400ms cubic-bezier(0.25, 0.8, 0.25, 1),
-            background-color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
+.example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
 }
 
-// ::ng-deep .mat-slider-wrapper { .mat-slider-horizontal .mat-slider-thumb-label {
-//     right: -24px;
-//     top: -67px;
-//     transform: translateY(26px) scale(0.01) rotate(
-// 45deg
-// );
-// }}
+.example-margin {
+    margin: 0 10px;
+}
+
+.jedai {
+    position: absolute;
+    right: 0;
+}

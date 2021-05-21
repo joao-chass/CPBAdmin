@@ -8,28 +8,20 @@ import { FormControl } from '@angular/forms';
 })
 export class VolutarioCadastroComponent implements OnInit {
   toppings = new FormControl();
+  ongs = new FormControl();
 
-  toppingList: string[] = ['Programação', 'Gerenciamento', 'RH', 'UX/UI', 'Psicologo', 'Outros']
+  toppingList: string[] = ['Programação', 'Gerenciamento', 'RH', 'UX/UI', 'Psicologo', 'Outros'];
+
+  ong: string[] = ['Globalll', 'Ong', 'LBT', 'Todos']
+
+  nivel;
   
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  formatLabel(value: number) {
-    if (value == 1) {
-      return 'Junior';
-    } else if (value == 2) {
-      return 'Pleno';
-    } else if(value == 3) {
-      return 'Senior';
-    }  else if (value == 4) {
-      return 'Master';
-    } else if (value == 4) {
-      return 'Jedai';
-    }
-
-    return value;
+  enviar() {
+    console.log(this.nivel);
   }
-
 }
