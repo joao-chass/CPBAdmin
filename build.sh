@@ -2,7 +2,7 @@ git config credential.helper store
 
 echo "Atualizando projeto"
 
-git pull https://username:your_password@github.com/username/repo_name.git
+git pull
 
 # echo "Atualizando pacotes"
 
