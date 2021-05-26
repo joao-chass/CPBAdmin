@@ -11,7 +11,7 @@ export class DadosPessoaisService {
   constructor(private http: HttpClient) { }
 
   buscaCep(cep): Observable<any> {
-    return this.http.get(`${this.apiCep}/wsl/${cep}/json/`,
+    return this.http.get(`${this.apiCep}/wsl/${cep}/json`,
     );
   }
 
