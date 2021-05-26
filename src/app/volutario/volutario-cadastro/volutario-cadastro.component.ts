@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-volutario-cadastro',
@@ -7,21 +8,19 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./volutario-cadastro.component.scss']
 })
 export class VolutarioCadastroComponent implements OnInit {
-  toppings = new FormControl();
-  ongs = new FormControl();
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
 
-  toppingList: string[] = ['Programação', 'Gerenciamento', 'RH', 'UX/UI', 'Psicologo', 'Outros'];
-
-  ong: string[] = ['Globalll', 'Ong', 'LBT', 'Todos']
-
-  nivel;
-  
-  constructor() { }
+  constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
   }
 
-  enviar() {
-    console.log(this.nivel);
-  }
+
 }

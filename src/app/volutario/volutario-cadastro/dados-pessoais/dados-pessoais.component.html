@@ -1,0 +1,92 @@
+<mat-card-header>
+</mat-card-header>
+<mat-chip-list aria-label="Fish selection">
+  <mat-chip color="primary" selected>
+    Dados pessoais
+    <span class="material-icons">
+      account_circle
+    </span>
+  </mat-chip>
+</mat-chip-list>
+
+<br>
+
+<mat-card-content>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Email (Esse é o e-email cadastrado na plataforma)</mat-label>
+      <input matInput disabled value="email@teste.com.br">
+    </mat-form-field>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field color="accent" appearance="outline" class="example-full-width">
+            <mat-label>Nome </mat-label>
+            <input matInput>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field color="accent" appearance="outline" class="example-full-width">
+            <mat-label>Sobrenome</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field color="accent" appearance="outline" class="example-full-width">
+            <mat-label>Cep </mat-label>
+            <input matInput type="tel" [(ngModel)]="cep" name="cep" (change)="ValidaCep()" >
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <p>
+      <mat-form-field color="accent" appearance="outline" class="example-full-width">
+        <mat-label>Endereço</mat-label>
+        <textarea matInput placeholder="Ex. 100 Main St"></textarea>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Data de nacimento</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </p>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field color="accent" class="example-full-width" appearance="outline">
+            <input type="text"
+                   placeholder="Pick one"
+                   aria-label="Number"
+                   matInput
+                   [formControl]="myControl"
+                   [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field color="accent" appearance="outline" class="example-full-width">
+            <mat-label>Sexo</mat-label>
+            <input matInput placeholder="Ex. California">
+          </mat-form-field>
+        </td>
+
+      </tr>
+    </table>
+
+
+  </form>
+</mat-card-content>
