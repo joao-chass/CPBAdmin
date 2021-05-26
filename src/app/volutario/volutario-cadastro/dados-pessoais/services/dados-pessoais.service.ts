@@ -16,7 +16,7 @@ export class DadosPessoaisService {
   //   );
   // }
 
-  buscaCep(cep: any) {
+  buscaCep(cep: any): any {
     return new Observable((x)=>{
     let request = new XMLHttpRequest();
     request.open("get", `https://viacep.com.br/ws/${cep}/json/`, true);

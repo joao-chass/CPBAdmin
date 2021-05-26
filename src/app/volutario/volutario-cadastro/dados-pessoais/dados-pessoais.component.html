@@ -1,3 +1,5 @@
+<div class="container">
+
 <mat-card-header>
 </mat-card-header>
 <mat-chip-list aria-label="Fish selection">
@@ -18,18 +20,38 @@
       <input matInput disabled value="email@teste.com.br">
     </mat-form-field>
 
-    <table class="example-full-width" cellspacing="0">
+    <table class="example-full-width" >
       <tr>
         <td>
           <mat-form-field color="accent" appearance="outline" class="example-full-width">
             <mat-label>Nome </mat-label>
-            <input matInput>
+            <input matInput [(ngModel)]="daodsPesoais.nome" name="nome">
           </mat-form-field>
         </td>
         <td>
           <mat-form-field color="accent" appearance="outline" class="example-full-width">
             <mat-label>Sobrenome</mat-label>
-            <input matInput>
+            <input matInput [(ngModel)]="daodsPesoais.sobrenome" name="sobrenome">
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field color="accent" appearance="outline" class="example-full-width">
+            <mat-label>Telefone </mat-label>
+            <input matInput [(ngModel)]="daodsPesoais.telefone" name="telefone">
+          </mat-form-field>
+        </td>
+        <td>
+
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Data de nacimento</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="daodsPesoais.dataNacimento" name="dataNacimento">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
         </td>
       </tr>
@@ -41,46 +63,52 @@
         <td>
           <mat-form-field color="accent" appearance="outline" class="example-full-width">
             <mat-label>Cep </mat-label>
-            <input matInput type="tel" [(ngModel)]="cep" name="cep" (change)="ValidaCep()" >
+            <input matInput [(ngModel)]="daodsPesoais.cep" name="cep" (change)="ValidaCep()" >
+          </mat-form-field>
+        </td>
+
+        <td>
+          <mat-form-field color="accent" appearance="outline" class="example-full-width">
+            <mat-label>Endereço </mat-label>
+            <input matInput [(ngModel)]="daodsPesoais.endereco" name="endereco" >
+          </mat-form-field>
+        </td>
+
+        <td>
+          <mat-form-field color="accent" appearance="outline" class="example-full-width">
+            <mat-label>UF </mat-label>
+            <input matInput [(ngModel)]="daodsPesoais.uf" name="uf" >
+          </mat-form-field>
+        </td>
+
+      </tr>
+    </table>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field color="accent" appearance="outline" class="example-full-width">
+            <mat-label>Bairro </mat-label>
+            <input matInput  [(ngModel)]="daodsPesoais.bairro" name="bairro" >
+          </mat-form-field>
+        </td>
+
+        <td>
+          <mat-form-field color="accent" appearance="outline" class="example-full-width">
+            <mat-label>Cidade </mat-label>
+            <input matInput  [(ngModel)]="daodsPesoais.cidade" name="cidade" >
           </mat-form-field>
         </td>
       </tr>
     </table>
 
-    <p>
-      <mat-form-field color="accent" appearance="outline" class="example-full-width">
-        <mat-label>Endereço</mat-label>
-        <textarea matInput placeholder="Ex. 100 Main St"></textarea>
-      </mat-form-field>
-      <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Data de nacimento</mat-label>
-        <input matInput [matDatepicker]="picker">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-    </p>
-
     <table class="example-full-width" cellspacing="0">
       <tr>
-        <td>
-          <mat-form-field color="accent" class="example-full-width" appearance="outline">
-            <input type="text"
-                   placeholder="Pick one"
-                   aria-label="Number"
-                   matInput
-                   [formControl]="myControl"
-                   [matAutocomplete]="auto">
-            <mat-autocomplete #auto="matAutocomplete">
-              <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-                {{option}}
-              </mat-option>
-            </mat-autocomplete>
-          </mat-form-field>
-        </td>
+
         <td>
           <mat-form-field color="accent" appearance="outline" class="example-full-width">
             <mat-label>Sexo</mat-label>
-            <input matInput placeholder="Ex. California">
+            <input matInput placeholder="Ex. California" [(ngModel)]="daodsPesoais.sexo" name="sexo">
           </mat-form-field>
         </td>
 
@@ -90,3 +118,5 @@
 
   </form>
 </mat-card-content>
+  
+</div>
