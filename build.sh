@@ -4,9 +4,9 @@ echo "Atualizando projeto"
 
 git pull https://username:your_password@github.com/username/repo_name.git
 
-echo "Atualizando pacotes"
+# echo "Atualizando pacotes"
 
-npm i
+# npm i
 
 echo "Build do projeto"
 
