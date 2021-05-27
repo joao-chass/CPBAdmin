@@ -7,7 +7,7 @@
     <mat-card-title>Bem vindo (a), João</mat-card-title>
 
 
-    <mat-vertical-stepper [linear]="false" #stepper>
+    <mat-vertical-stepper [linear]="false" #stepper class="formulario">
       <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
           <ng-template matStepLabel>Dados pessoais</ng-template>
@@ -32,7 +32,7 @@
       <mat-step [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup">
           <ng-template matStepLabel>Sobre você</ng-template>
-          <app-dados-profissionais></app-dados-profissionais>
+          <app-dados-sobre-aleatorios></app-dados-sobre-aleatorios>
           <div>
             <button mat-raised-button color="accent" matStepperPrevious>Voltar</button>
             |
@@ -45,7 +45,10 @@
         <ng-template matStepLabel>Finalizar</ng-template>
         <h2>Parabens vc finalizou o cadastro 🎉👌👌🎉 </h2>
 
-        <p>Todos os dados informados  </p>
+        <h3> 💌 Em breve você recebera um e-mail contendo o link  para acessar a 
+          plataforma 
+       (em alguns casos o e-mail pode ir direto para o span ou lixo eletronico, vale apena dar uma olhada 👀👀👀)</h3>
+      
 
 
         <div>

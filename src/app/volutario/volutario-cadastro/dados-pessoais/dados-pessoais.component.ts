@@ -14,7 +14,7 @@ export class DadosPessoaisComponent implements OnInit {
   myControl = new FormControl();
   filteredOptions: Observable<string[]>;
   daodsPesoais = new DadosPessoais();
-
+  sexo;
   constructor(private dadosPesoaisSevice: DadosPessoaisService) {}
 
   ngOnInit(): void {
