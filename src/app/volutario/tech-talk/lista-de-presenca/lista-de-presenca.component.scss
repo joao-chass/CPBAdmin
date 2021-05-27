@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-start;
+    height: 100%;
+    margin-top: 55px
+}
+
+.card-formulario {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    background-color: #ffffff00;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.example-header-image {
+    background-image: url("https://cdn.dribbble.com/users/3162310/screenshots/9168149/image.gif");
+    background-size: cover;
+}
+
+.example-form {
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.input-data {
+    padding-right: 8px;
+}
+
+
+.confirmacao {
+   width: 100%;
+}

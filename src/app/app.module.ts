@@ -67,6 +67,8 @@ import { VolutarioCadastroComponent } from './volutario/volutario-cadastro/volut
 import { DadosPessoaisComponent } from './volutario/volutario-cadastro/dados-pessoais/dados-pessoais.component';
 import { DadosProfissionaisComponent } from './volutario/volutario-cadastro/dados-profissionais/dados-profissionais.component';
 import { DadosSobreAleatoriosComponent } from './volutario/volutario-cadastro/dados-sobre-aleatorios/dados-sobre-aleatorios.component';
+import { TechTalkComponent } from './volutario/tech-talk/tech-talk.component';
+import { ListaDePresencaComponent } from './volutario/tech-talk/lista-de-presenca/lista-de-presenca.component';
 
 @NgModule({
   declarations: [
@@ -88,7 +90,9 @@ import { DadosSobreAleatoriosComponent } from './volutario/volutario-cadastro/da
     VolutarioCadastroComponent,
     DadosPessoaisComponent,
     DadosProfissionaisComponent,
-    DadosSobreAleatoriosComponent
+    DadosSobreAleatoriosComponent,
+    TechTalkComponent,
+    ListaDePresencaComponent
   ],
   imports: [
     BrowserModule,

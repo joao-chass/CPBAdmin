@@ -1,0 +1,106 @@
+<div class="container">
+    <mat-card class="card-formulario">
+        <img src="./../../../assets//logo.png" alt="" width="80px">
+
+        <br>
+
+        <mat-card-title>Lista de presença 1ª TechTalk Grupo CPB</mat-card-title>
+
+        <br>
+
+        <p>O evento ocorrera no dia 28/05 as 18h30</p>
+
+        <br>
+
+        <mat-chip-list aria-label="Fish selection">
+            <mat-chip color="primary" selected>
+                Confirmar presença
+                <span class="material-icons">
+                    <span class="material-icons-outlined">
+                        event_available
+                    </span>
+                </span>
+            </mat-chip>
+        </mat-chip-list>
+
+        <br>
+
+        <div class="example-full-width" >
+            <div class="row-inputs">
+                <div class="input-data">
+                    <mat-form-field color="accent" appearance="outline" class="example-full-width">
+                        <mat-label>Nome </mat-label>
+                        <input matInput placeholder="Digite seu nome">
+                        <mat-icon matSuffix>badge</mat-icon>
+                    </mat-form-field>
+                </div>
+
+                <div class="input-data">
+                    <mat-form-field color="accent" appearance="outline" class="example-full-width">
+                        <mat-label>Email </mat-label>
+                        <input matInput placeholder="seu@email.com">
+                        <mat-icon matSuffix>mail</mat-icon>
+                    </mat-form-field>
+                </div class="input-data">
+
+
+            </div class="row-inputs">
+
+            <div class="row-inputs">
+                <td>
+                    <mat-form-field color="accent" appearance="outline" class="example-full-width">
+                        <mat-label>Celular </mat-label>
+                        <input matInput placeholder="(xx) x xxxx-xxxx">
+                        <mat-icon matSuffix>phone_iphone</mat-icon>
+                    </mat-form-field>
+                </td>
+
+                <td>
+                    <mat-form-field appearance="outline" color="accent">
+                        <mat-label>Area</mat-label>
+                        <mat-select [(ngModel)]="selectedValue" name="food" >
+                            <mat-option *ngFor="let tipe of area" [value]="tipe">{{tipe}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-icon matSuffix>work</mat-icon>
+                    </mat-form-field>
+
+                    
+                </div>
+
+
+            </tr>
+
+            <tr>
+                <td>
+                   
+                </td>
+
+                <span *ngIf="selectedValue == 'OUTRA'">
+
+                    <td>
+                        <mat-form-field color="accent" appearance="outline" class="example-full-width">
+                            <mat-label>Qual  </mat-label>
+                            <input matInput placeholder="Digite a area">
+                            <mat-icon matSuffix>live_help</mat-icon>
+                        </mat-form-field>
+                        
+                    </td>
+                </span>
+
+
+            </tr>
+
+            <p><mat-checkbox>Confirmo minha presença no evento</mat-checkbox></p>
+        </table>
+
+ 
+            <button mat-raised-button color="primary" class="confirmacao" >
+                Confirmar presença
+            </button>
+      
+    </mat-card>
+
+
+
+</div>

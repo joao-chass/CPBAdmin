@@ -11,6 +11,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService } from './component/token/auth-guard.service';
 import { RecuperarSenhaComponent } from './login/recuperar-senha/recuperar-senha.component';
+import { TechTalkComponent } from './volutario/tech-talk/tech-talk.component';
+import { ListaDePresencaComponent } from './volutario/tech-talk/lista-de-presenca/lista-de-presenca.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -30,6 +32,7 @@ const routes: Routes = [
 
   //volutarios
   { path: 'voluntario-cadastro/:token', component: VolutarioCadastroComponent },
+  { path: 'lista-de-presenca/:token', component: ListaDePresencaComponent },
 
 ];
 
