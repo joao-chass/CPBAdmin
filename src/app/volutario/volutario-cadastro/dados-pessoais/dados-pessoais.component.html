@@ -16,7 +16,7 @@
 <mat-card-content>
   <form class="example-form">
     <mat-form-field class="example-full-width">
-      <mat-label>Email (Esse é o e-email cadastrado na plataforma)</mat-label>
+      <mat-label>Email (Esse é o e-email cadastrado)</mat-label>
       <input matInput disabled value="email@teste.com.br">
     </mat-form-field>
 
@@ -57,7 +57,6 @@
       </tr>
     </table>
 
-
     <table class="example-full-width" cellspacing="0">
       <tr>
         <td>
@@ -73,6 +72,21 @@
             <input matInput [(ngModel)]="daodsPesoais.endereco" name="endereco" >
           </mat-form-field>
         </td>
+
+      </tr>
+    </table>
+
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+
+        <td>
+          <mat-form-field color="accent" appearance="outline" class="example-full-width">
+            <mat-label>Cidade </mat-label>
+            <input matInput  [(ngModel)]="daodsPesoais.cidade" name="cidade" >
+          </mat-form-field>
+        </td>
+      
 
         <td>
           <mat-form-field color="accent" appearance="outline" class="example-full-width">
@@ -93,27 +107,22 @@
           </mat-form-field>
         </td>
 
+        
         <td>
-          <mat-form-field color="accent" appearance="outline" class="example-full-width">
-            <mat-label>Cidade </mat-label>
-            <input matInput  [(ngModel)]="daodsPesoais.cidade" name="cidade" >
-          </mat-form-field>
+          <section class="example-section">
+            <label class="example-margin">Genero: </label>
+            <mat-radio-group [(ngModel)]="daodsPesoais.sexo" name="nivel">
+                <mat-radio-button class="example-margin" value="1">Boys  🙋‍♂️ </mat-radio-button>
+                <mat-radio-button class="example-margin" value="2">Girls  🙋‍♀️‍ </mat-radio-button>
+            </mat-radio-group>
+        </section>
         </td>
+
+      
       </tr>
     </table>
 
-    <table class="example-full-width" cellspacing="0">
-      <tr>
 
-        <td>
-          <mat-form-field color="accent" appearance="outline" class="example-full-width">
-            <mat-label>Sexo</mat-label>
-            <input matInput placeholder="Ex. California" [(ngModel)]="daodsPesoais.sexo" name="sexo">
-          </mat-form-field>
-        </td>
-
-      </tr>
-    </table>
 
 
   </form>

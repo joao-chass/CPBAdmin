@@ -28,7 +28,8 @@ export class DadosPessoaisComponent implements OnInit {
       this.daodsPesoais.endereco = res.logradouro;
       this.daodsPesoais.uf = res.uf;
       this.daodsPesoais.bairro = res.bairro;
-      this.daodsPesoais.cidade = res.localidade
+      this.daodsPesoais.cidade = res.localidade;
+      this.daodsPesoais.cep = res.cep;
       console.log(res);
     }, err => {
       console.log(err);
