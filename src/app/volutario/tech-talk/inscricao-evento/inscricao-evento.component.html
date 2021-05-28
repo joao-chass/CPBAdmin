@@ -1,0 +1,38 @@
+
+  <div class="container">
+ <mat-card class="card-formulario">
+  <mat-vertical-stepper [linear]="false" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Informe seu dados </ng-template>
+        <div class="formulario">
+
+         <app-dados-inscricao></app-dados-inscricao>
+        </div>
+        <div>
+          <button mat-raised-button color="primary">Proximo</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Confirme seu e-mail</ng-template>
+        <app-confirma-email></app-confirma-email>
+        <div>
+          <button mat-button matStepperPrevious>Voltar</button>
+          <button mat-raised-button color="primary">Proximo</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Finalizar inscrição</ng-template>
+      <div class="text-finish">
+        <h3>Parabéns incrição finalizada 🎉🎉🎉🎉</h3>
+  
+        <p>Agora é só aguardar que iremos te enviar por e-mail o link no dia do evento</p>
+      </div>
+     
+    </mat-step>
+  </mat-vertical-stepper>
+</mat-card>
+</div>

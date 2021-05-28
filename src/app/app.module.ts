@@ -67,6 +67,10 @@ import { VolutarioCadastroComponent } from './volutario/volutario-cadastro/volut
 import { DadosPessoaisComponent } from './volutario/volutario-cadastro/dados-pessoais/dados-pessoais.component';
 import { DadosProfissionaisComponent } from './volutario/volutario-cadastro/dados-profissionais/dados-profissionais.component';
 import { DadosSobreAleatoriosComponent } from './volutario/volutario-cadastro/dados-sobre-aleatorios/dados-sobre-aleatorios.component';
+import { TechTalkComponent } from './volutario/tech-talk/tech-talk.component';
+import { InscricaoEventoComponent } from './volutario/tech-talk/inscricao-evento/inscricao-evento.component';
+import { DadosInscricaoComponent } from './volutario/tech-talk/inscricao-evento/dados-inscricao/dados-inscricao.component';
+import { ConfirmaEmailComponent } from './volutario/tech-talk/inscricao-evento/confirma-email/confirma-email.component';
 
 @NgModule({
   declarations: [
@@ -88,7 +92,11 @@ import { DadosSobreAleatoriosComponent } from './volutario/volutario-cadastro/da
     VolutarioCadastroComponent,
     DadosPessoaisComponent,
     DadosProfissionaisComponent,
-    DadosSobreAleatoriosComponent
+    DadosSobreAleatoriosComponent,
+    TechTalkComponent,
+    InscricaoEventoComponent,
+    DadosInscricaoComponent,
+    ConfirmaEmailComponent
   ],
   imports: [
     BrowserModule,

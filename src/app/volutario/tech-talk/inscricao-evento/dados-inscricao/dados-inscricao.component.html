@@ -1,0 +1,68 @@
+
+<h1> Inscrição 1º tech talk Grupo CPB 🎉🎉</h1>
+<p>O evento ocorrera no dia 28/05 a partir das 18h30</p>
+
+<br>
+
+<mat-chip-list aria-label="Fish selection">
+    <mat-chip color="primary" selected>
+        Confirmar presença
+        <span class="material-icons">
+            <span class="material-icons-outlined">
+                event_available
+            </span>
+        </span>
+    </mat-chip>
+</mat-chip-list>
+
+<br>
+
+<div class="input-data">
+    <mat-form-field color="accent" appearance="outline" class="data-input">
+        <mat-label>Nome </mat-label>
+        <input matInput placeholder="Digite seu nome" formControlName="nome" required>
+        <mat-icon matSuffix>badge</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field color="accent" appearance="outline" class="data-input">
+        <mat-label>Email </mat-label>
+        <input matInput placeholder="seu@email.com" formControlName="email" required>
+        <mat-icon matSuffix>mail</mat-icon>
+    </mat-form-field>
+</div>
+
+
+<div class="input-data">
+
+    <mat-form-field color="accent" appearance="outline" class="data-input">
+        <mat-label>Celular </mat-label>
+        <input matInput placeholder="(xx) x xxxx-xxxx" formControlName="firstCtrl" required>
+        <mat-icon matSuffix>phone_iphone</mat-icon>
+    </mat-form-field>
+
+
+
+    <mat-form-field appearance="outline" class="data-input" color="accent">
+        <mat-label>Area</mat-label>
+        <mat-select [(ngModel)]="selectedValue" name="food">
+            <mat-option *ngFor="let tipe of area" [value]="tipe" formControlName="firstCtrl" required>
+                 {{tipe}}
+            </mat-option>
+        </mat-select>
+        <mat-icon matSuffix>work</mat-icon>
+    </mat-form-field>
+
+
+</div>
+
+<span *ngIf="selectedValue == 'OUTRA'">
+
+
+    <mat-form-field color="accent" appearance="outline" class="data-input">
+        <mat-label>Infrome sua area</mat-label>
+        <input matInput placeholder="Digite a area">
+        <mat-icon matSuffix>live_help</mat-icon>
+    </mat-form-field>
+
+
+</span>

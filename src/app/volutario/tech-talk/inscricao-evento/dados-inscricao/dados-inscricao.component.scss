@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.card-formulario {
+    background-color: #ffffff00;
+    
+}
+
+.example-header-image {
+    background-image: url("https://cdn.dribbble.com/users/3162310/screenshots/9168149/image.gif");
+    background-size: cover;
+}
+
+.example-form {
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.input-data {
+    padding-left: 8px;
+}
+
+.data-input {
+    padding-right: 8px;
+}
