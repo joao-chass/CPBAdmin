@@ -1,0 +1,63 @@
+<button mat-stroked-button (click)="backClicked()" color="primary">
+    <mat-icon matSuffix>west</mat-icon> Voltar
+</button>
+<span *ngIf="!carregando" class="centerSpinner">
+
+
+    <mat-card>
+
+        <mat-card-title>
+            <button mat-mini-fab disabled>
+                {{dadosUsuario.nome.charAt(0).toUpperCase()}}
+            </button>
+
+            {{dadosUsuario.nome}}
+
+
+            <mat-slide-toggle [(ngModel)]="dadosUsuario.statususuario">
+                <mat-chip-list aria-label="Fish selection">
+                    <mat-chip color="{{dadosUsuario.statususuario ? 'accent' : 'warn'}}" selected>
+                        {{dadosUsuario.statususuario ? 'Ativado' : 'Bloqueado'}}
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">
+                            {{dadosUsuario.statususuario ? 'check_circle' : 'highlight_off'}}
+                        </mat-icon>
+                    </mat-chip>
+                </mat-chip-list>
+            </mat-slide-toggle>
+        </mat-card-title>
+        <mat-card-subtitle>{{dadosUsuario.email}}</mat-card-subtitle>
+
+
+        <mat-card-content>
+
+            <mat-list>
+                <mat-list-item>
+                    <mat-chip-list aria-label="Fish selection">
+                        <mat-chip>
+                            Acessos <mat-icon matSuffix>lock</mat-icon>
+                        </mat-chip>
+                    </mat-chip-list>
+
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <section class="example-section" *ngFor="let item of acessos">
+                        <mat-checkbox class="example-margin" value="{{item.id}}">{{item.name}}</mat-checkbox>
+                    </section>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-list>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="editUsuario()">EDITAR</button>
+        </mat-card-actions>
+
+
+
+    </mat-card>
+</span>
+
+<span *ngIf="carregando" class="centerSpinner">
+    <mat-spinner></mat-spinner>
+</span>

@@ -14,22 +14,22 @@ export class MenuRotasComponent implements OnInit {
       nome: 'Home'
     },
     {
-      rota: '/edicao-usuario',
+      rota: '/usuarios',
       icone: 'account_circle',
       nome: 'Usuario'
-    },{
+    }, {
       rota: '/relatorio',
       icone: 'insert_chart_outlined',
       nome: 'Relatorios'
-    },{
+    }, {
       rota: '/noticia',
       icone: 'book',
       nome: 'Noticia'
-    },{
+    }, {
       rota: '/criar-votacao',
       icone: 'emoji_events',
       nome: 'Votação'
-    },{
+    }, {
       rota: '/transparencia',
       icone: 'request_quote',
       nome: 'Transparencia'

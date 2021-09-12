@@ -64,6 +64,7 @@ import { LoginComponent } from './login/login.component';
 import { RecuperarSenhaComponent } from './login/recuperar-senha/recuperar-senha.component';
 import { VolutarioComponent } from './volutario/volutario.component';
 import { VolutarioCadastroComponent } from './volutario/volutario-cadastro/volutario-cadastro.component';
+import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import { VolutarioCadastroComponent } from './volutario/volutario-cadastro/volut
     LoginComponent,
     RecuperarSenhaComponent,
     VolutarioComponent,
-    VolutarioCadastroComponent
+    VolutarioCadastroComponent,
+    EditarUsuarioComponent
   ],
   imports: [
     BrowserModule,
