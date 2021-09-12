@@ -8,11 +8,22 @@ import { Observable } from 'rxjs';
 })
 export class UsuariosService {
 
- api = environment.api;
+  api = environment.api;
 
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<any> {
     return this.http.get(`${this.api}/get-cadastros`)
   }
+
+  getuserById(id): Observable<any> {
+    return this.http.get(`${this.api}/get-cadastro-by-id/${id}`)
+  }
+
+  editUser(dataUser, id): Observable<any> {
+    return this.http.put(`${this.api}/edit-user/${id}`, {
+      statususuario: dataUser
+    })
+  }
+
 }
