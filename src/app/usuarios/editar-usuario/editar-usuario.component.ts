@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuariosService } from '../services/usuarios.service';
 import { Location } from '@angular/common';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-editar-usuario',
@@ -13,7 +14,8 @@ export class EditarUsuarioComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private usuarioService: UsuariosService,
-    private location: Location) {
+    private location: Location,
+    private _snackBar: MatSnackBar) {
   }
 
   dadosUsuario: any;
@@ -44,8 +46,15 @@ export class EditarUsuarioComponent implements OnInit {
 
   editUsuario() {
     this.usuarioService.editUser(this.dadosUsuario.statususuario, this.dadosUsuario.usuarioid).subscribe(res => {
-      console.log(res);
+      this.openSnackBar(res.message);
     })
+  }
+
+
+  openSnackBar(message: string) {
+    this._snackBar.open(message, 'ok', {
+      duration: 2000,
+    });
   }
 
 }
