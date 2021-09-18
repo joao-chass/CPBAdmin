@@ -3,7 +3,7 @@ import decode from 'jwt-decode';
 export class TokenModel {
     private token: string;
     private tokenPayload: any;
-    private Roles: Array<string>;
+    private Roles: Array<any>;
     public usuarioid: string;
 
 

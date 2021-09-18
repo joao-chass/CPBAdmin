@@ -21,12 +21,13 @@ export class EditarUsuarioComponent implements OnInit {
   dadosUsuario: any;
   carregando: boolean = true;
   acessos = [
-    { id: 1, name: 'Edição Usuarios' },
-    { id: 2, name: 'Relatorios' },
-    { id: 3, name: 'Noticias' },
-    { id: 4, name: 'Votação' },
-    { id: 5, name: 'Transparencia' },
-  ]
+    { id: 1, permisao: false, name: 'Edição Usuarios' },
+    { id: 2, permisao: false, name: 'Relatorios' },
+    { id: 3, permisao: true, name: 'Noticias' },
+    { id: 4, permisao: false, name: 'Votação' },
+    { id: 5, permisao: false, name: 'Transparencia' },
+  ];
+  teste;
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(queryParams => {
@@ -40,12 +41,23 @@ export class EditarUsuarioComponent implements OnInit {
     })
   }
 
+  onChange(event: any) {
+    console.log(event.source.value); // will contain "hello"
+    console.log(event.source.checked); // will contain the checked state of the checkbox
+  }
+
   backClicked() {
     this.location.back();
   }
 
+  toggle(event) {
+    console.log(event.source.value);
+  }
+
   editUsuario() {
-    this.usuarioService.editUser(this.dadosUsuario.statususuario, this.dadosUsuario.usuarioid).subscribe(res => {
+    console.log(this.acessos);
+
+    this.usuarioService.editUser(this.dadosUsuario.statususuario, this.dadosUsuario.usuarioid, this.acessos).subscribe(res => {
       this.openSnackBar(res.message);
     })
   }
