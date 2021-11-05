@@ -33,7 +33,6 @@ export class EditarUsuarioComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(queryParams => {
       let id = queryParams.get("id");
-
       this.usuarioService.getuserById(id).subscribe(res => {
         this.dadosUsuario = res.responseObj[0];
         this.permissoesUsuarios = res.rolesObj[0];
@@ -50,14 +49,11 @@ export class EditarUsuarioComponent implements OnInit {
     console.log(event.source.checked); // will contain the checked state of the checkbox
   }
 
-  verificarPermissoes(teste) {
-    const categoriasFiltradas = this.acessos.filter(categoria => teste.filter(produto => produto.nome === categoria.nome).length);
-    categoriasFiltradas.forEach(element => {
-      element.permisao = true;
+  verificarPermissoes(permissoesUsuario) {
+    const categoriasFiltradas = this.acessos.filter(categoria => permissoesUsuario.filter(produto => produto.nome === categoria.nome).length);
+    categoriasFiltradas.forEach(permissaoAtual => {
+      permissaoAtual.permisao = true;
     });
-    console.log(categoriasFiltradas);
-
-
   }
 
   backClicked() {
