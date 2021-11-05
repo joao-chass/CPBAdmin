@@ -20,10 +20,15 @@ export class UsuariosService {
     return this.http.get(`${this.api}/get-cadastro-by-id/${id}`)
   }
 
-  editUser(dataUser, id): Observable<any> {
+  editUser(dataUser, id, permissoes): Observable<any> {
     return this.http.put(`${this.api}/edit-user/${id}`, {
-      statususuario: dataUser
+      statususuario: dataUser,
+      usuarioPermissoes: permissoes
     })
+  }
+
+  getPermissoes(): Observable<any> {
+    return this.http.get(`${this.api}/get-permissoes`)
   }
 
 }

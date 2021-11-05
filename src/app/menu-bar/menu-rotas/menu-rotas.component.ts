@@ -9,30 +9,30 @@ import { Router } from '@angular/router';
 export class MenuRotasComponent implements OnInit {
   rotas = [
     {
-      rota: '/home',
-      icone: 'home',
-      nome: 'Home'
-    },
-    {
       rota: '/usuarios',
       icone: 'account_circle',
-      nome: 'Usuario'
+      nome: 'Usuario',
+      permissoesid: 'Edição Usuarios'
     }, {
       rota: '/relatorio',
       icone: 'insert_chart_outlined',
-      nome: 'Relatorios'
+      nome: 'Relatorios',
+      permissoesid: 'Relatorios'
     }, {
       rota: '/noticia',
       icone: 'book',
-      nome: 'Noticia'
+      nome: 'Noticia',
+      permissoesid: 'Noticias'
     }, {
       rota: '/criar-votacao',
       icone: 'emoji_events',
-      nome: 'Votação'
+      nome: 'Votação',
+      permissoesid: 'Votação'
     }, {
       rota: '/transparencia',
       icone: 'request_quote',
-      nome: 'Transparencia'
+      nome: 'Transparencia',
+      permissoesid: 'Transparencia'
     }
   ]
   constructor(private route: Router) { }
