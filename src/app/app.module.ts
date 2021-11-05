@@ -65,6 +65,7 @@ import { RecuperarSenhaComponent } from './login/recuperar-senha/recuperar-senha
 import { VolutarioComponent } from './volutario/volutario.component';
 import { VolutarioCadastroComponent } from './volutario/volutario-cadastro/volutario-cadastro.component';
 import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario.component';
+import { ShowByClaimDirective } from './ShowByClaimDirective/show-by-claim-directive.directive';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario
     RecuperarSenhaComponent,
     VolutarioComponent,
     VolutarioCadastroComponent,
-    EditarUsuarioComponent
+    EditarUsuarioComponent,
+    ShowByClaimDirective
   ],
   imports: [
     BrowserModule,
