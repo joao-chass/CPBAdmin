@@ -12,16 +12,20 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService } from './component/token/auth-guard.service';
 import { RecuperarSenhaComponent } from './login/recuperar-senha/recuperar-senha.component';
 import { InscricaoEventoComponent } from './volutario/tech-talk/inscricao-evento/inscricao-evento.component';
+import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'login', component: LoginComponent },
   { path: 'recuperar-senha', component: RecuperarSenhaComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuardService] },
-  { path: 'edicao-usuario', component: UsuariosComponent, canActivate: [AuthGuardService] },
   { path: 'relatorio', component: RelatorioComponent, canActivate: [AuthGuardService] },
   { path: 'noticia', component: NoticiasComponent, canActivate: [AuthGuardService] },
   { path: 'criacao-noticia', component: CriarNoticiasComponent, canActivate: [AuthGuardService] },
+
+  //Edição usuario
+  { path: 'usuarios', component: UsuariosComponent, canActivate: [AuthGuardService] },
+  { path: 'edicao-usuario/:id', component: EditarUsuarioComponent, canActivate: [AuthGuardService] },
 
   //votação
   { path: 'criar-votacao', component: VotacaoComponent, canActivate: [AuthGuardService] },

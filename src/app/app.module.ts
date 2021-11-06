@@ -71,6 +71,8 @@ import { TechTalkComponent } from './volutario/tech-talk/tech-talk.component';
 import { InscricaoEventoComponent } from './volutario/tech-talk/inscricao-evento/inscricao-evento.component';
 import { DadosInscricaoComponent } from './volutario/tech-talk/inscricao-evento/dados-inscricao/dados-inscricao.component';
 import { ConfirmaEmailComponent } from './volutario/tech-talk/inscricao-evento/confirma-email/confirma-email.component';
+import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario.component';
+import { ShowByClaimDirective } from './ShowByClaimDirective/show-by-claim-directive.directive';
 
 @NgModule({
   declarations: [
@@ -96,7 +98,9 @@ import { ConfirmaEmailComponent } from './volutario/tech-talk/inscricao-evento/c
     TechTalkComponent,
     InscricaoEventoComponent,
     DadosInscricaoComponent,
-    ConfirmaEmailComponent
+    ConfirmaEmailComponent,
+    EditarUsuarioComponent,
+    ShowByClaimDirective
   ],
   imports: [
     BrowserModule,

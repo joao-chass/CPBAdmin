@@ -30,12 +30,12 @@ export class LoginComponent implements OnInit {
   }
 
   getErrorMessage(campo) {
-    if(campo === 'email') {
+    if (campo === 'email') {
       if (this.email.hasError('required')) {
         return 'Você deve informar o e-mail';
       }
       return this.email.hasError('email') ? 'E-mail invalido' : '';
-    } else if(campo === 'senha') {
+    } else if (campo === 'senha') {
       return this.email.hasError('required') ? 'Você deve informar a senha' : '';
     }
   }
@@ -45,13 +45,14 @@ export class LoginComponent implements OnInit {
     if (this.email.valid && this.senha.valid) {
       this.auth.logar(this.credenciais).subscribe(res => {
         localStorage.setItem('dados', res.usuarios.usuarioid);
+
         this.token.setToken(res.token);
         this.route.navigateByUrl('/home')
       }, err => {
         console.log(err.error.message);
         this.cerdenciaisInvalidas = true;
-        this.email.setErrors({'incorrect': true});
-        this.senha.setErrors({'incorrect': true});
+        this.email.setErrors({ 'incorrect': true });
+        this.senha.setErrors({ 'incorrect': true });
       })
     } else {
       this.email.markAllAsTouched();
