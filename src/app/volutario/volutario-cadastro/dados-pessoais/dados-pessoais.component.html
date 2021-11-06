@@ -1,131 +1,113 @@
 <div class="container">
 
-<mat-card-header>
-</mat-card-header>
-<mat-chip-list aria-label="Fish selection">
-  <mat-chip color="primary" selected>
-    Dados pessoais
-    <span class="material-icons">
-      account_circle
-    </span>
-  </mat-chip>
-</mat-chip-list>
+  <mat-chip-list aria-label="Fish selection">
+    <mat-chip color="primary" selected>
+      Dados pessoais
+      <span class="material-icons">
+        account_circle
+      </span>
+    </mat-chip>
+  </mat-chip-list>
 
-<br>
+  <br>
 
-<mat-card-content>
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
-      <mat-label>Email (Esse é o e-email cadastrado)</mat-label>
-      <input matInput disabled value="email@teste.com.br">
-    </mat-form-field>
+  <mat-card-content class="formulario-dados-pessoais">
+    <form>
+      <mat-form-field class="example-full-width">
+        <mat-label>Email (Esse é o e-email cadastrado)</mat-label>
+        <input matInput disabled value="email@teste.com.br">
+      </mat-form-field>
 
-    <table class="example-full-width" >
-      <tr>
-        <td>
+      <div class="container-input">
+
+        <div class="input-class">
           <mat-form-field color="accent" appearance="outline" class="example-full-width">
             <mat-label>Nome </mat-label>
             <input matInput [(ngModel)]="daodsPesoais.nome" name="nome">
           </mat-form-field>
-        </td>
-        <td>
+        </div>
+
+        <div>
           <mat-form-field color="accent" appearance="outline" class="example-full-width">
             <mat-label>Sobrenome</mat-label>
             <input matInput [(ngModel)]="daodsPesoais.sobrenome" name="sobrenome">
           </mat-form-field>
-        </td>
-      </tr>
-    </table>
+        </div>
 
-    <table class="example-full-width" cellspacing="0">
-      <tr>
-        <td>
+      </div>
+
+
+      <div class="container-input">
+
+        <div class="input-class">
           <mat-form-field color="accent" appearance="outline" class="example-full-width">
             <mat-label>Telefone </mat-label>
             <input matInput [(ngModel)]="daodsPesoais.telefone" name="telefone">
           </mat-form-field>
-        </td>
-        <td>
+        </div>
 
-          <mat-form-field class="example-full-width" appearance="outline">
+        <div>
+          <mat-form-field color="accent" appearance="outline" class="example-full-width" appearance="outline">
             <mat-label>Data de nacimento</mat-label>
             <input matInput [matDatepicker]="picker" [(ngModel)]="daodsPesoais.dataNacimento" name="dataNacimento">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
-        </td>
-      </tr>
-    </table>
+        </div>
 
-    <table class="example-full-width" cellspacing="0">
-      <tr>
-        <td>
+      </div>
+
+
+      <div class="container-input">
+
+        <div class="input-class">
           <mat-form-field color="accent" appearance="outline" class="example-full-width">
             <mat-label>Cep </mat-label>
-            <input matInput [(ngModel)]="daodsPesoais.cep" name="cep" (change)="ValidaCep()" >
+            <input matInput [(ngModel)]="daodsPesoais.cep" name="cep" (change)="ValidaCep()">
           </mat-form-field>
-        </td>
+        </div>
 
-        <td>
+        <div *ngIf="daodsPesoais.endereco">
           <mat-form-field color="accent" appearance="outline" class="example-full-width">
             <mat-label>Endereço </mat-label>
-            <input matInput [(ngModel)]="daodsPesoais.endereco" name="endereco" >
+            <input matInput [(ngModel)]="daodsPesoais.endereco" name="endereco">
           </mat-form-field>
-        </td>
+        </div>
 
-      </tr>
-    </table>
+      </div>
 
+      <div class="container-input">
 
-    <table class="example-full-width" cellspacing="0">
-      <tr>
-
-        <td>
-          <mat-form-field color="accent" appearance="outline" class="example-full-width">
+        <div class="input-class">
+          <mat-form-field color="accent" appearance="outline" class="example-full-width" *ngIf="daodsPesoais.endereco">
             <mat-label>Cidade </mat-label>
-            <input matInput  [(ngModel)]="daodsPesoais.cidade" name="cidade" >
+            <input matInput [(ngModel)]="daodsPesoais.cidade" name="cidade">
           </mat-form-field>
-        </td>
-      
+        </div>
 
-        <td>
-          <mat-form-field color="accent" appearance="outline" class="example-full-width">
+        <div>
+          <mat-form-field color="accent" appearance="outline" class="example-full-width" *ngIf="daodsPesoais.endereco">
             <mat-label>UF </mat-label>
-            <input matInput [(ngModel)]="daodsPesoais.uf" name="uf" >
+            <input matInput [(ngModel)]="daodsPesoais.uf" name="uf">
           </mat-form-field>
-        </td>
+        </div>
 
-      </tr>
-    </table>
+      </div>
 
-    <table class="example-full-width" cellspacing="0">
-      <tr>
-        <td>
-          <mat-form-field color="accent" appearance="outline" class="example-full-width">
+      <div class="container-input">
+
+        <div class="input-class">
+          <mat-form-field color="accent" appearance="outline" class="example-full-width" *ngIf="daodsPesoais.endereco">
             <mat-label>Bairro </mat-label>
-            <input matInput  [(ngModel)]="daodsPesoais.bairro" name="bairro" >
+            <input matInput [(ngModel)]="daodsPesoais.bairro" name="bairro">
           </mat-form-field>
-        </td>
+        </div>
 
-        
-        <td>
-          <section class="example-section">
-            <label class="example-margin">Genero: </label>
-            <mat-radio-group [(ngModel)]="daodsPesoais.sexo" name="sexo">
-                <mat-radio-button class="example-margin" value="1">Boys  🙋‍♂️ </mat-radio-button>
-                <mat-radio-button class="example-margin" value="2">Girls  🙋‍♀️‍ </mat-radio-button>
-            </mat-radio-group>
-        </section>
-        </td>
 
-      
-      </tr>
-    </table>
+      </div>
 
 
 
 
-  </form>
-</mat-card-content>
-  
+    </form>
+  </mat-card-content>
+
 </div>

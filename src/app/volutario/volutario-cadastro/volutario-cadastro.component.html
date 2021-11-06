@@ -1,65 +1,65 @@
 <div class="container">
-  <mat-card class="card-formulario">
-    <img src="./../../../assets//logo.png" alt="" width="80px">
 
-    <br>
+  <img src="./../../../assets//logo.png" alt="" width="80px">
 
-    <mat-card-title>Bem vindo (a), João</mat-card-title>
+  <br>
 
-
-    <mat-vertical-stepper [linear]="false" #stepper class="formulario">
-      <mat-step [stepControl]="firstFormGroup">
-        <form [formGroup]="firstFormGroup">
-          <ng-template matStepLabel>Dados pessoais</ng-template>
-            <app-dados-pessoais></app-dados-pessoais>
-          <div>
-            <button mat-raised-button color="accent" matStepperNext>Proximo</button>
-          </div>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="secondFormGroup">
-        <form [formGroup]="secondFormGroup">
-          <ng-template matStepLabel>Dados profissionais</ng-template>
-          <app-dados-profissionais></app-dados-profissionais>
-          <div>
-            <button mat-raised-button color="accent" matStepperPrevious>Voltar</button>
-            |
-            <button mat-raised-button color="accent" matStepperNext>Proximo</button>
-          </div>
-        </form>
-      </mat-step>
-
-      <mat-step [stepControl]="secondFormGroup">
-        <form [formGroup]="secondFormGroup">
-          <ng-template matStepLabel>Sobre você</ng-template>
-          <app-dados-sobre-aleatorios></app-dados-sobre-aleatorios>
-          <div>
-            <button mat-raised-button color="accent" matStepperPrevious>Voltar</button>
-            |
-            <button mat-raised-button color="accent" matStepperNext>Proximo</button>
-          </div>
-        </form>
-      </mat-step>
-
-      <mat-step>
-        <ng-template matStepLabel>Finalizar</ng-template>
-        <h2>Parabens vc finalizou o cadastro 🎉👌👌🎉 </h2>
-
-        <h3> 💌 Em breve você recebera um e-mail contendo o link  para acessar a 
-          plataforma 
-       (em alguns casos o e-mail pode ir direto para o span ou lixo eletronico, vale apena dar uma olhada 👀👀👀)</h3>
-      
+  Bem vindo (a), João
 
 
+  <mat-vertical-stepper [linear]="false" #stepper class="formulario">
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Dados pessoais</ng-template>
+        <app-dados-pessoais></app-dados-pessoais>
         <div>
-          <button mat-raised-button color="accent" (click)="stepper.reset()">Revisar</button>
-          |
-          <button mat-raised-button color="accent" matStepperPrevious>Finalizar</button>
+          <button mat-raised-button color="accent" matStepperNext>Proximo</button>
         </div>
-      </mat-step>
-    </mat-vertical-stepper>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Dados profissionais</ng-template>
+        <app-dados-profissionais></app-dados-profissionais>
+        <div>
+          <button mat-raised-button color="accent" matStepperPrevious>Voltar</button>
+          |
+          <button mat-raised-button color="accent" matStepperNext>Proximo</button>
+        </div>
+      </form>
+    </mat-step>
 
-  </mat-card>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Sobre você</ng-template>
+        <app-dados-sobre-aleatorios></app-dados-sobre-aleatorios>
+        <div>
+          <button mat-raised-button color="accent" matStepperPrevious>Voltar</button>
+          |
+          <button mat-raised-button color="accent" matStepperNext>Proximo</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Finalizar</ng-template>
+      <h2>Parabens vc finalizou o cadastro 🎉👌👌🎉 </h2>
+
+      <h3> 💌 Em breve você recebera um e-mail contendo o link para acessar a
+        plataforma
+        (em alguns casos o e-mail pode ir direto para o span ou lixo eletronico, vale apena dar uma olhada 👀👀👀)</h3>
+
+
+
+      <div>
+        <button mat-raised-button color="accent" (click)="stepper.reset()">Revisar</button>
+        |
+        <button mat-raised-button color="accent" matStepperPrevious>Finalizar</button>
+      </div>
+    </mat-step>
+  </mat-vertical-stepper>
+
+
 
 
 

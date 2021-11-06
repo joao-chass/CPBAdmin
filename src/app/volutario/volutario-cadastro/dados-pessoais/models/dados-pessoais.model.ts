@@ -8,5 +8,4 @@ export class DadosPessoais {
     cidade: string;
     uf: string;
     dataNacimento: Date;
-    sexo: string;
 }

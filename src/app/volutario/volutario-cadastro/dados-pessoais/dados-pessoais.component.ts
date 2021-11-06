@@ -14,14 +14,14 @@ export class DadosPessoaisComponent implements OnInit {
   myControl = new FormControl();
   filteredOptions: Observable<string[]>;
   daodsPesoais = new DadosPessoais();
-  sexo;
-  constructor(private dadosPesoaisSevice: DadosPessoaisService) {}
+
+  constructor(private dadosPesoaisSevice: DadosPessoaisService) { }
 
   ngOnInit(): void {
-   
+
   }
 
- 
+
 
   ValidaCep() {
     this.dadosPesoaisSevice.buscaCep(this.daodsPesoais.cep).subscribe(res => {
