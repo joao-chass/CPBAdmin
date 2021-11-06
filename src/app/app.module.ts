@@ -66,7 +66,6 @@ import { VolutarioComponent } from './volutario/volutario.component';
 import { VolutarioCadastroComponent } from './volutario/volutario-cadastro/volutario-cadastro.component';
 import { DadosPessoaisComponent } from './volutario/volutario-cadastro/dados-pessoais/dados-pessoais.component';
 import { DadosProfissionaisComponent } from './volutario/volutario-cadastro/dados-profissionais/dados-profissionais.component';
-import { DadosSobreAleatoriosComponent } from './volutario/volutario-cadastro/dados-sobre-aleatorios/dados-sobre-aleatorios.component';
 import { TechTalkComponent } from './volutario/tech-talk/tech-talk.component';
 import { InscricaoEventoComponent } from './volutario/tech-talk/inscricao-evento/inscricao-evento.component';
 import { DadosInscricaoComponent } from './volutario/tech-talk/inscricao-evento/dados-inscricao/dados-inscricao.component';
@@ -94,7 +93,6 @@ import { ShowByClaimDirective } from './ShowByClaimDirective/show-by-claim-direc
     VolutarioCadastroComponent,
     DadosPessoaisComponent,
     DadosProfissionaisComponent,
-    DadosSobreAleatoriosComponent,
     TechTalkComponent,
     InscricaoEventoComponent,
     DadosInscricaoComponent,

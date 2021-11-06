@@ -29,18 +29,6 @@
       </form>
     </mat-step>
 
-    <mat-step [stepControl]="secondFormGroup">
-      <form [formGroup]="secondFormGroup">
-        <ng-template matStepLabel>Sobre você</ng-template>
-        <app-dados-sobre-aleatorios></app-dados-sobre-aleatorios>
-        <div>
-          <button mat-raised-button color="accent" matStepperPrevious>Voltar</button>
-          |
-          <button mat-raised-button color="accent" matStepperNext>Proximo</button>
-        </div>
-      </form>
-    </mat-step>
-
     <mat-step>
       <ng-template matStepLabel>Finalizar</ng-template>
       <h2>Parabens vc finalizou o cadastro 🎉👌👌🎉 </h2>
