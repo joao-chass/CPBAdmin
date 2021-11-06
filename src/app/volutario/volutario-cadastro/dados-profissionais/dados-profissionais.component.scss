@@ -44,7 +44,10 @@ mat-slider {
   display: flex;
   align-content: center;
   align-items: center;
-  height: 60px;
+  padding: 2px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
 }
 
 .example-margin {
@@ -55,3 +58,23 @@ mat-slider {
   margin: 8px 10px;
 }
 
+.container-input {
+  display: flex;
+  flex-direction: row;
+}
+
+.input-class {
+  margin-right: 15px;
+}
+
+.container-nivel {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 800px) {
+  .container-input {
+    flex-direction: column;
+  }
+}
