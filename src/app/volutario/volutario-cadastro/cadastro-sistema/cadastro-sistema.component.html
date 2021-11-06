@@ -1,0 +1,57 @@
+<div class="container">
+
+    <mat-chip-list aria-label="Fish selection">
+        <mat-chip color="primary" selected>
+            Dados pessoais
+            <span class="material-icons">
+                account_circle
+            </span>
+        </mat-chip>
+    </mat-chip-list>
+
+    <br>
+
+    <mat-card-content class="formulario-dados-pessoais">
+        <form>
+
+            <h1>Para finalizar escolha uma Senha para acessar o Porta das ONG's </h1>
+
+            <div class="container-input">
+
+                <div class="input-class">
+                    <mat-form-field color="accent" appearance="outline" class="example-full-width">
+                        <mat-label>Senha </mat-label>
+                        <input matInput type="{{mostratSenha ? 'text' : 'password'}}" name="nome">
+                        <button matSuffix mat-icon-button aria-label="Clear" (click)="mostratSenha = !mostratSenha">
+                            <mat-icon>{{mostratSenha ? "visibility_off" : "visibility"}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <mat-form-field color="accent" appearance="outline" class="example-full-width">
+                        <mat-label>confirmar a senha</mat-label>
+                        <input matInput type="password" name="sobrenome" type="{{mostratSenha ? 'text' : 'password'}}">
+                        <button matSuffix mat-icon-button aria-label="Clear" (click)="mostratSenha = !mostratSenha">
+                            <mat-icon>{{mostratSenha ? "visibility_off" : "visibility"}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        </form>
+    </mat-card-content>
+
+</div>

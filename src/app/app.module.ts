@@ -72,6 +72,7 @@ import { DadosInscricaoComponent } from './volutario/tech-talk/inscricao-evento/
 import { ConfirmaEmailComponent } from './volutario/tech-talk/inscricao-evento/confirma-email/confirma-email.component';
 import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario.component';
 import { ShowByClaimDirective } from './ShowByClaimDirective/show-by-claim-directive.directive';
+import { CadastroSistemaComponent } from './volutario/volutario-cadastro/cadastro-sistema/cadastro-sistema.component';
 
 @NgModule({
   declarations: [
@@ -98,7 +99,8 @@ import { ShowByClaimDirective } from './ShowByClaimDirective/show-by-claim-direc
     DadosInscricaoComponent,
     ConfirmaEmailComponent,
     EditarUsuarioComponent,
-    ShowByClaimDirective
+    ShowByClaimDirective,
+    CadastroSistemaComponent
   ],
   imports: [
     BrowserModule,
