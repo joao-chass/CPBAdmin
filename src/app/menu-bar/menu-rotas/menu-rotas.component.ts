@@ -20,7 +20,7 @@ export class MenuRotasComponent implements OnInit {
       permissoesid: 'Relatorios'
     }, {
       rota: '/noticia',
-      icone: 'book',
+      icone: 'newspaper',
       nome: 'Noticia',
       permissoesid: 'Noticias'
     }, {
@@ -32,6 +32,11 @@ export class MenuRotasComponent implements OnInit {
       rota: '/transparencia',
       icone: 'request_quote',
       nome: 'Transparencia',
+      permissoesid: 'Transparencia'
+    }, {
+      rota: '/voluntario',
+      icone: 'badge',
+      nome: 'Área do voluntário',
       permissoesid: 'Transparencia'
     }
   ]

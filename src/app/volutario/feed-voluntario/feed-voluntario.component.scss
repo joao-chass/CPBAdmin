@@ -1,0 +1,30 @@
+.body {
+    padding: 5px;
+    max-width: 680px;
+    height: auto;
+
+    h1 {
+        font-weight: 100;
+    }
+}
+
+.example-header-image {
+    background-size: cover;
+}
+
+.volunario-news {
+    margin-bottom: 15px;
+    background: #42424200;
+    color: #fff;
+    border-color: #00dea1;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+}
+
+@media (max-width: 800px) {
+    .body {
+        width: 100%;
+        height: auto;
+    }
+}
