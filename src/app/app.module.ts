@@ -76,6 +76,7 @@ import { CadastroSistemaComponent } from './volutario/volutario-cadastro/cadastr
 import { PerfilVoluntarioComponent } from './volutario/home-voluntario/perfil-voluntario/perfil-voluntario.component';
 import { NewsPapersVoluntarioComponent } from './volutario/home-voluntario/news-papers-voluntario/news-papers-voluntario.component';
 import { FeedVoluntarioComponent } from './volutario/home-voluntario/feed-voluntario/feed-voluntario.component';
+import { NavegacaoVoluntarioComponent } from './volutario/home-voluntario/navegacao-voluntario/navegacao-voluntario.component';
 
 
 
@@ -108,7 +109,8 @@ import { FeedVoluntarioComponent } from './volutario/home-voluntario/feed-volunt
     CadastroSistemaComponent,
     PerfilVoluntarioComponent,
     FeedVoluntarioComponent,
-    NewsPapersVoluntarioComponent
+    NewsPapersVoluntarioComponent,
+    NavegacaoVoluntarioComponent
   ],
   imports: [
     BrowserModule,

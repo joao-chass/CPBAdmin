@@ -1,0 +1,10 @@
+<mat-list>
+    <div mat-subheader>Acessos</div>
+    <mat-list-item *ngFor="let folder of folders">
+        <button mat-stroked-button color="accent" style="width: 100%;">
+            {{folder.name}} <mat-icon>{{folder.icone}}</mat-icon>
+        </button>
+    </mat-list-item>
+
+
+</mat-list>
