@@ -1,0 +1,58 @@
+.body {
+    width: 320px;
+    height: 90vh;
+}
+
+.volunario-news {
+    margin-bottom: 15px;
+    background: #fdfdfd00;
+    color: #fff;
+}
+
+.example-header-image {
+    background-size: cover;
+}
+
+.mat-progress-bar {
+    display: block;
+    height: 17px;
+    overflow: hidden;
+    border-radius: 17px;
+    position: relative;
+    transition: opacity 250ms linear;
+    width: 100%;
+}
+
+.conquista {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.conquistas-logo {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.conquistas-logo-ong {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 50px;
+    height: 60px;
+    width: 60px;
+}

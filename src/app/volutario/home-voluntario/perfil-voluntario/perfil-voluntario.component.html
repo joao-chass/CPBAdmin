@@ -1,0 +1,90 @@
+<div class="body">
+    <mat-card class="volunario-news">
+        <mat-card-header>
+
+            <img mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                alt="Photo of a Shiba Inu" class="example-header-image" width="60px">
+
+            <mat-card-title>João</mat-card-title>
+            <mat-card-subtitle>Desenvolvedor</mat-card-subtitle>
+            <button mat-button> Acessar perfil </button>
+        </mat-card-header>
+
+
+
+        <mat-card-content>
+            <mat-list>
+                <div mat-subheader>
+                    <h2 class="example-h2">
+                        Nivel: Junior 📚
+                    </h2>
+                </div>
+                <mat-list-item>
+
+                    <div mat-line>
+                        <h5>
+                            Exeperiencia 40/100
+
+                            <span class="material-icons"
+                                matTooltip="O seu nivél é baseado com ações feitas dentro da plataforma"
+                                matTooltipPosition="right" style="cursor: pointer;">
+                                help_outline
+                            </span>
+                        </h5>
+                    </div>
+                    <div mat-line>
+                        <mat-progress-bar mode="determinate" value="40" color="warn"></mat-progress-bar>
+                    </div>
+                </mat-list-item>
+
+                <br>
+                <mat-divider></mat-divider>
+                <br>
+
+                <div mat-subheader>
+                    <h2 class="example-h2">
+                        Conquistas
+                    </h2>
+                </div>
+                <div class="conquista">
+
+                    <div *ngFor="let item of conquistas">
+
+                        <div class="conquistas-logo">
+                            <img src="./../../assets/conquistas/{{item.nome}}.png" width="80px">
+                            {{item.nome}}
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <br>
+                <mat-divider></mat-divider>
+                <br>
+
+                <div mat-subheader>
+                    <h2 class="example-h2">
+                        ONGs
+                    </h2>
+                </div>
+
+                <div class="conquista">
+
+                    <div *ngFor="let item of ongs">
+
+                        <div class="conquistas-logo-ong">
+                            <img src="{{item.img}}" width="60px">
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </mat-list>
+
+        </mat-card-content>
+
+
+    </mat-card>
+</div>

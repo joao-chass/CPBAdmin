@@ -73,9 +73,11 @@ import { ConfirmaEmailComponent } from './volutario/tech-talk/inscricao-evento/c
 import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario.component';
 import { ShowByClaimDirective } from './ShowByClaimDirective/show-by-claim-directive.directive';
 import { CadastroSistemaComponent } from './volutario/volutario-cadastro/cadastro-sistema/cadastro-sistema.component';
-import { PerfilVoluntarioComponent } from './volutario/perfil-voluntario/perfil-voluntario.component';
-import { FeedVoluntarioComponent } from './volutario/feed-voluntario/feed-voluntario.component';
-import { NewsPapersVoluntarioComponent } from './volutario/news-papers-voluntario/news-papers-voluntario.component';
+import { PerfilVoluntarioComponent } from './volutario/home-voluntario/perfil-voluntario/perfil-voluntario.component';
+import { NewsPapersVoluntarioComponent } from './volutario/home-voluntario/news-papers-voluntario/news-papers-voluntario.component';
+import { FeedVoluntarioComponent } from './volutario/home-voluntario/feed-voluntario/feed-voluntario.component';
+
+
 
 @NgModule({
   declarations: [
