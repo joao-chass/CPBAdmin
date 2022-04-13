@@ -27,7 +27,7 @@ export class RecuperarSenhaComponent implements OnInit {
     if(this.recuperar.email) {
       this.auth.recuperarSenha(this.recuperar).subscribe(res => {
         this.emailInformado = true;
-        console.log(res);
+
 
       })
     }
@@ -39,31 +39,31 @@ export class RecuperarSenhaComponent implements OnInit {
     if(campo == 'email') {
       if (this.email.hasError('required')) {
         return 'Você deve informar e-mail';
-  
-  
+
+
       }
-  
+
       return this.email.hasError('email') ? 'E-mail invalido' : '';
-    } 
+    }
     //validação codigo
     else if (campo == 'codigo') {
-      
+
       if (this.codigo.hasError('required')) {
         return 'Você deve informar o codigo';
-      } 
-  
+      }
+
       return this.codigo.hasError('minLength') || this.codigo.hasError('maxLength') ? '' : 'O código esta invalido';
-    } 
+    }
     //validação senha
     else if (campo == 'senha') {
       if (this.novaSenha.hasError('required')) {
         return 'Você deve informar a nova senha';
 
       }
-  
+
       return this.novaSenha.hasError('minLength') ? '' : 'A senha deve conter no minimo 4 carteres';
     }
-   
+
   }
 
   resetar() {
@@ -71,7 +71,7 @@ export class RecuperarSenhaComponent implements OnInit {
       this.auth.resetar(this.recuperar).subscribe(res => {
         console.log(res);
         this.route.navigateByUrl('/login')
-  
+
       }, err => {
         this.msgErroRestSeha = err.error.message
         this.codigoInvalido = true;

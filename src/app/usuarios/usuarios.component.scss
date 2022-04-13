@@ -1,9 +1,12 @@
+$backgorud: #f5f7fa;
+
 .conatainer {
   display: flex;
-  align-content: flex-start;
   flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-right: 20px;
 }
-
 
 table {
   width: 100%;
@@ -11,6 +14,7 @@ table {
 
 .tablea-users {
   padding: 30px;
+  width: 100%;
 }
 
 .titulo {
@@ -148,10 +152,136 @@ table {
   }
 }
 
+.filtro {
+  width: 180px;
+  margin-top: 2px;
 
-.example-container {
-  width: 400px;
-  height: 200px;
-  margin: 10px;
-  border: 1px solid #555;
+  h1 {
+    text-align: center;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+    color: #2f2f2f;
+  }
+}
+
+.example-section {
+  margin: 12px 0;
+}
+
+.example-margin {
+  margin: 0 12px;
+}
+
+.body-filter {
+  margin-top: 37px;
+  h2 {
+    /* FILTRO - titulo */
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
+
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    color: #2f2f2f;
+  }
+
+  p {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+
+    color: #707070;
+  }
+}
+
+mat-divider {
+  background-color: $backgorud;
+  height: 1px;
+}
+
+.example-list-section {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  /* identical to box height */
+
+  color: #707070;
+  padding-bottom: 5px;
+}
+.button-filter {
+  background: #f8f8f8;
+  border-radius: 5px;
+  color: #787878;
+  margin-right: 2px;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  width: 62.1px;
+  height: 24px;
+  padding: 5px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #787878;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 2px;
+
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+.button-clen-filter {
+  background: #f8f8f8;
+  border-radius: 5px;
+  color: #787878;
+  margin-right: 2px;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  width: 100%;
+  height: 24px;
+  padding: 5px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #787878;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 5px;
+
+  margin-bottom: 20px;
+  margin-top: 15px;
 }

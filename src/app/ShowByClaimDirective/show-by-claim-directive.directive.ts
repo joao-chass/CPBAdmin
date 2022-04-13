@@ -45,7 +45,6 @@ export class ShowByClaimDirective implements OnInit {
 
   setClaims() {
     this.claims = this.renderTemplate.split('|');
-    console.log(this.claims);
 
   }
 

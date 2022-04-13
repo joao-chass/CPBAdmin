@@ -16,6 +16,11 @@ export class UsuariosComponent implements OnInit {
   displayedColumns: string[] = ['id', 'iconUser', 'nome', 'email', 'cpf', 'statusUsuario'];
   dataSource;
   numeroDeUsuario!: number;
+  permissoes = [
+    {name: 'Admin', completed: false, color: 'primary'},
+    {name: 'Redatores', completed: false, color: 'accent'},
+    {name: 'Convidados', completed: false, color: 'warn'}
+  ]
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -32,7 +37,6 @@ export class UsuariosComponent implements OnInit {
   ngOnInit(): void {
     this.usuarios.getUsers().subscribe(res => {
       this.numeroDeUsuario = res.length;
-      console.log(res);
 
       this.dataSource = new MatTableDataSource<UsuarioElemento>(res);
       this.dataSource.paginator = this.paginator;

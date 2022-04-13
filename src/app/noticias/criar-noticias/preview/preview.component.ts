@@ -15,7 +15,6 @@ export class PreviewComponent implements OnInit {
 
   publicaNoticia() {
     this.notciaService.criarMateria(this.previewData).subscribe(res=> {
-      console.log(res);
     })
   }
 }

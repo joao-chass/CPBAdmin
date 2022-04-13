@@ -52,7 +52,6 @@ export class TransparenciaComponent implements OnInit {
       if(this.dadosTransparencia[i].operacao == "entrada") {
         this.total = number + this.total;
       } else {
-        console.log(number);
         this.total = this.total - number;
       }
 

@@ -1,115 +1,177 @@
-<ng-container class="conatainer">
-  <div class="tablea-users">
-    <div class="text-apresentacao">
-
-      <h1>
-        Gerenciamento de Usuários
-      </h1>
-      <div style="flex-direction: row;">
-        <p>
-          Atualmente existem {{numeroDeUsuario}} usuários cadastrados no sistema.
-        </p>
+<ng-container>
+  <div class="conatainer">
+    <div class="tablea-users">
+      <div class="text-apresentacao">
+        <h1>Gerenciamento de Usuários</h1>
+        <div style="flex-direction: row">
+          <p>
+            Atualmente existem {{ numeroDeUsuario }} usuários cadastrados no
+            sistema.
+          </p>
+        </div>
       </div>
-    </div>
 
-    <mat-card >
-      <div class="titulo">
-
-        <div class="text-titulo">
-
-          <h1>
-            Exibindo todos os usuários
-          </h1>
-          <div class="ordenacao">
-
+      <mat-card>
+        <div class="titulo">
+          <div class="text-titulo">
+            <h1>Exibindo todos os usuários</h1>
+            <div class="ordenacao">
               Ordenar de A a Z
 
-            <i>
-              <mat-icon svgIcon="my-star-icon"></mat-icon>
-            </i>
+              <i>
+                <mat-icon svgIcon="my-star-icon"></mat-icon>
+              </i>
+            </div>
+          </div>
+
+          <div>
+            <button mat-button class="buttonAdd">
+              + Adicionar novo usuário
+            </button>
           </div>
         </div>
 
+        <mat-card style="background: #f5f7fa">
+          <!-- @todo Create a component for user table -->
+          <table mat-table [dataSource]="dataSource" class="table-user">
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef class="header-table">#</th>
+              <td mat-cell *matCellDef="let info" class="table-body">
+                {{ info.usuarioid }}
+              </td>
+            </ng-container>
 
+            <ng-container matColumnDef="iconUser">
+              <th mat-header-cell *matHeaderCellDef class="header-table">
+                Avatar
+              </th>
+              <td mat-cell *matCellDef="let info" class="table-body">
+                <button mat-mini-fab disabled>
+                  {{ info.nome.charAt(0).toUpperCase() }}
+                </button>
+              </td>
+            </ng-container>
 
-        <div>
-          <button  mat-button class="buttonAdd">
-            + Adicionar novo usuário
-          </button>
-        </div>
+            <ng-container matColumnDef="nome">
+              <th mat-header-cell *matHeaderCellDef class="header-table">
+                Nome
+              </th>
+              <td mat-cell *matCellDef="let info" class="table-body">
+                {{ info.nome }}
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="email">
+              <th mat-header-cell *matHeaderCellDef class="header-table">
+                Email
+              </th>
+              <td mat-cell *matCellDef="let info" class="table-body">
+                {{ info.email }}
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="cpf">
+              <th mat-header-cell *matHeaderCellDef class="header-table">
+                CPF
+              </th>
+              <td mat-cell *matCellDef="let info" class="table-body">
+                {{ info.cpf }}
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="statusUsuario">
+              <th mat-header-cell *matHeaderCellDef class="header-table">
+                Status
+              </th>
+              <td mat-cell *matCellDef="let info" class="table-body">
+                <button
+                  mat-button
+                  color="{{ info.statususuario ? 'primary' : 'accent' }}"
+                >
+                  {{ info.statususuario ? "Ativo" : "Bloqueado" }}
+                </button>
+              </td>
+            </ng-container>
+
+            <tr
+              mat-header-row
+              *matHeaderRowDef="displayedColumns"
+              class="paginacao"
+            ></tr>
+            <tr
+              mat-row
+              *matRowDef="let row; columns: displayedColumns"
+              class="paginacao"
+            ></tr>
+          </table>
+
+          <mat-paginator
+            color="accent"
+            class="paginacao"
+            [pageSizeOptions]="[5, 10, 20]"
+            showFirstLastButtons
+          ></mat-paginator>
+        </mat-card>
+      </mat-card>
+    </div>
+
+    <mat-card class="filtro">
+      <h1>Filtros</h1>
+
+      <mat-divider></mat-divider>
+
+      <div class="body-filter">
+        <h2>PERMISSÕES</h2>
+
+        <span class="example-list-section">
+          <div *ngFor="let subtask of permissoes">
+            <mat-checkbox
+              [(ngModel)]="subtask.completed"
+              (ngModelChange)="updateAllComplete()"
+            >
+              {{ subtask.name }}
+            </mat-checkbox>
+          </div>
+        </span>
+
+        <button mat-button class="button-filter">Aplicar</button>
+        <button mat-button class="button-filter">Limpar</button>
       </div>
 
-      <mat-card style="background: #F5F7FA;
-      ">
-          <!-- @todo Create a component for user table -->
-        <table mat-table [dataSource]="dataSource" class="table-user">
+      <mat-divider></mat-divider>
+
+      <div class="body-filter">
+        <h2>STATUS</h2>
+
+        <span class="example-list-section">
+          <div>
+            <mat-checkbox>
+            Ativo
+            </mat-checkbox>
+          </div>
+          <div>
+            <mat-checkbox>
+              Bloqueado
+              </mat-checkbox>
+          </div>
+        </span>
+
+        <button mat-button class="button-filter">Aplicar</button>
+        <button mat-button class="button-filter">Limpar</button>
+      </div>
 
 
-          <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef class="header-table"> # </th>
-            <td mat-cell *matCellDef="let info" class="table-body" >
-              {{info.usuarioid}}
-            </td>
-          </ng-container>
+      <mat-divider></mat-divider>
 
-          <ng-container matColumnDef="iconUser">
-            <th mat-header-cell *matHeaderCellDef class="header-table"> Avatar </th>
-            <td mat-cell *matCellDef="let info" class="table-body" >
+      <div class="body-filter">
+        <h2>Limpar filtros</h2>
 
-              <button mat-mini-fab disabled>
-                {{info.nome.charAt(0).toUpperCase()}}
-              </button>
-            </td>
-          </ng-container>
+        <p>
+          Essa ação remove todos os filtros aplicados.
+        </p>
 
-          <ng-container matColumnDef="nome">
-            <th mat-header-cell *matHeaderCellDef class="header-table"> Nome </th>
-            <td mat-cell *matCellDef="let info" class="table-body" >   {{info.nome}} </td>
-          </ng-container>
-
-          <ng-container matColumnDef="email">
-            <th mat-header-cell *matHeaderCellDef class="header-table"> Email </th>
-            <td mat-cell *matCellDef="let info" class="table-body" >   {{info.email}} </td>
-          </ng-container>
-
-          <ng-container matColumnDef="cpf">
-            <th mat-header-cell *matHeaderCellDef class="header-table"> CPF </th>
-            <td mat-cell *matCellDef="let info" class="table-body" >   {{info.cpf}} </td>
-          </ng-container>
-
-          <ng-container matColumnDef="statusUsuario">
-            <th mat-header-cell *matHeaderCellDef class="header-table" > Status </th>
-            <td mat-cell *matCellDef="let info"  class="table-body" >
-              <button mat-button  color="{{info.statususuario ? 'primary' : 'accent'}}" >
-                {{info.statususuario ? 'Ativo' : 'Bloqueado'}}
-              </button>
-               </td>
-          </ng-container>
-
-
-
-
-          <tr mat-header-row *matHeaderRowDef="displayedColumns" class="paginacao"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="paginacao"></tr>
-        </table>
-
-        <mat-paginator color="accent" class="paginacao" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-      </mat-card>
-
-
-  </mat-card>
-</div>
-
-<mat-card>
-    <mat-card-header>
-        <mat-card-title>Title</mat-card-title>
-        <mat-card-subtitle>Subtitle</mat-card-subtitle>
-    </mat-card-header>
-    <img matCardImage src="Card wide image source">
-    <mat-card-content>
-        Text content
-    </mat-card-content>
-
-</mat-card>
-
+        <button mat-button class="button-clen-filter">Limpar todos os filtros</button>
+      </div>
+    </mat-card>
+  </div>
 </ng-container>

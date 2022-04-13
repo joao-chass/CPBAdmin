@@ -17,12 +17,10 @@ export class TextEditorComponent implements OnInit {
   }
 
    chooseColor(){
-     console.log(this.cor);
     document.execCommand('foreColor', false, this.cor);
   }
 
    changeFont(){
-    console.log(this.fonte);
     document.execCommand('fontName', false, this.fonte);
   }
 
