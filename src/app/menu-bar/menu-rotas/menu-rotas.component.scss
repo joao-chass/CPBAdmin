@@ -1,30 +1,33 @@
+$font-color: #606060;
+$backgorund-actived: #F5F7FA;
+
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 260px;
+  width: 156px;
   background-color: #ffffff00;
 }
 
 li a {
   display: block;
-  color: #00dea1;
-  padding: 5px 16px;
+  color:  #F5F7FA;
+  padding: 5px 12px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 500;
   margin-bottom: 4px;
 }
 
 li.active > a {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: $backgorund-actived;
+  color: #415BB8;
   border-radius: 7px;
 }
 
 li > a {
   text-transform: capitalize;
-  color: #00dea1;
+  color: $font-color;
   transition: background-color 0.2s, color 0.2s;
 }
 
@@ -33,13 +36,13 @@ li a:hover {
 }
 
 li a:hover:not(.active) {
-  background-color: #00dea1;
+  background-color: #556E9C;
   color: #ffffff;
   border-radius: 7px;
 }
 
 i {
-  padding: 4px 24px 0px 0px;
+  padding: 4px 12px 0px 0px;
 }
 
 .material-icons {

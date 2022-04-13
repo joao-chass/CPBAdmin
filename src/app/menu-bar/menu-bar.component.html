@@ -1,36 +1,38 @@
-<mat-toolbar class="example-toolbar"  color="ligth" >
-  <button mat-icon-button data-toggle="collapse" (click)="sidenav.open()"><mat-icon >menu</mat-icon></button>
-    <img src="./../../assets/logo.png" width="60px"  >
+
 
   <mat-sidenav-container class="example-container" (backdropClick)="close('backdrop')">
-    <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose>
+    <mat-sidenav #sidenav (keydown.escape)="close('escape')"   mode="side">
+      <div class="menu">
 
-
-      <div class="botao-fechar">
-        <button mat-button  color="accent" class="botao"  (click)="close('toggle button')">
-          <i class="material-icons closeIcon">close</i>
+        <button mat-icon-button data-toggle="collapse" (click)="close('toggle button')">
+          <mat-icon style="color: #606060; font-size: 25px;">menu</mat-icon>
         </button>
+
+        <h1>CPB Studio</h1>
+      </div>
+
+      <div class="routes">
+        <app-menu-rotas (click)="close('toggle button')" ></app-menu-rotas>
       </div>
 
 
-
-      <div class="logo">
-        <img src="https://conselhodobrasil.org/wp-content/uploads/2020/07/logo-CPB-fundo-transparente-300x169.png" width="80px"  >
-      </div>
-
-      <hr>
-
-      <app-menu-rotas (click)="close('toggle button')" ></app-menu-rotas>
 
 
 
     </mat-sidenav>
 
+    <mat-toolbar  color="dark" >
+      <button mat-icon-button data-toggle="collapse" (click)="sidenav.open()" *ngIf="!sidenav.opened"><mat-icon >menu</mat-icon></button>
+
+      <div class="close-menu">
+        <button matTooltip="Sair" (click)="logout()"  mat-mini-fab color="warn" > <i class="material-icons">power_settings_new</i></button>
+      </div>
+
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+
 
   </mat-sidenav-container>
 
-  <div class="close-menu ">
-    <button matTooltip="Sair" (click)="logout()"  mat-mini-fab color="warn" > <i class="material-icons">power_settings_new</i></button>
-  </div>
 
-</mat-toolbar>

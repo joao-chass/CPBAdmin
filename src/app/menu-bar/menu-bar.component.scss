@@ -4,17 +4,15 @@
   bottom: 0;
   right: 0;
   overflow: hidden;
+  background-color: #e5e5e5;
 }
 
 .mat-drawer {
-  position: fixed !important;
-  z-index: 4;
   display: block;
   top: 0;
   left: 0;
   bottom: 0;
-  padding: 10px;
-  width: 280px;
+  width: 182px;
   z-index: 808;
   pointer-events: auto;
   outline: 0;
@@ -22,6 +20,10 @@
   overflow-x: hidden;
   background-color: #ffffff;
   transform: translate3d(-100%, 0, 0);
+}
+
+.routes {
+  padding: 10px;
 }
 
 .logo{
@@ -53,4 +55,20 @@
 
 .position-fixed{
   position: fixed
+}
+
+.menu {
+  display: flex;
+  align-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  background-color: #F5F7FA;
+  height: 60px;
+  padding: 4px 9px 0px 12px;
+  h1 {
+    font-size: 16px;
+    color: #2F2F2F;
+    font-weight: 500;
+    padding: 17px 0px 0px 0px;
+  }
 }
