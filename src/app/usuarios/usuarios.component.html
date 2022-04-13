@@ -75,7 +75,7 @@
                 CPF
               </th>
               <td mat-cell *matCellDef="let info" class="table-body">
-                {{ info.cpf }}
+                {{ formatCnpjCpf(info.cpf)  }}
               </td>
             </ng-container>
 

@@ -1,38 +1,64 @@
+<mat-sidenav-container
+  class="example-container"
+  (backdropClick)="close('backdrop')"
+>
+  <mat-sidenav #sidenav (keydown.escape)="close('escape')" mode="side">
+    <div class="menu">
+      <button
+        mat-icon-button
+        data-toggle="collapse"
+        (click)="close('toggle button')"
+      >
+        <mat-icon style="color: #606060; font-size: 25px">menu</mat-icon>
+      </button>
 
+      <h1>CPB Studio</h1>
+    </div>
 
-  <mat-sidenav-container class="example-container" (backdropClick)="close('backdrop')">
-    <mat-sidenav #sidenav (keydown.escape)="close('escape')"   mode="side">
-      <div class="menu">
+    <div class="routes">
+      <app-menu-rotas (click)="close('toggle button')"></app-menu-rotas>
+    </div>
+  </mat-sidenav>
 
-        <button mat-icon-button data-toggle="collapse" (click)="close('toggle button')">
-          <mat-icon style="color: #606060; font-size: 25px;">menu</mat-icon>
-        </button>
+  <mat-toolbar class="toolbar-menu">
+    <button
+      mat-icon-button
+      data-toggle="collapse"
+      (click)="sidenav.open()"
+      *ngIf="!sidenav.opened"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
 
-        <h1>CPB Studio</h1>
-      </div>
+    <div class="input-pesquisa">
+      <mat-form-field appearance="outline" color="accent">
+        <input
+          type="text"
+          matInput
+          placeholder="Digite o que procura..."
+          class="input-pesquisa-x"
+        />
+        <mat-icon matSuffix style="color: #878787">search</mat-icon>
+      </mat-form-field>
+    </div>
 
-      <div class="routes">
-        <app-menu-rotas (click)="close('toggle button')" ></app-menu-rotas>
-      </div>
+    <mat-form-field appearance="outline" class="input-pesquisa" color="accent">
+      <mat-select name="Pizza" [(value)]="ongSelecionada">
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{ food.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
 
+    <div class="close-menu" *ngIf="!carregando">
+      <button mat-mini-fab disabled>
+        {{ nome.charAt(0).toUpperCase() }}
+      </button>
+      <h1>
+        {{ nome }}
+      </h1>
+    </div>
+  </mat-toolbar>
 
-
-
-
-    </mat-sidenav>
-
-    <mat-toolbar style="background-color: #FFF;">
-      <button mat-icon-button data-toggle="collapse" (click)="sidenav.open()" *ngIf="!sidenav.opened"><mat-icon >menu</mat-icon></button>
-
-      <div class="close-menu">
-        <button matTooltip="Sair" (click)="logout()"  mat-mini-fab color="primary" > <i class="material-icons">power_settings_new</i></button>
-      </div>
-
-    </mat-toolbar>
-
-    <router-outlet></router-outlet>
-
-
-  </mat-sidenav-container>
-
-
+  <router-outlet></router-outlet>
+</mat-sidenav-container>

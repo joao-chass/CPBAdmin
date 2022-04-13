@@ -4,7 +4,7 @@
   bottom: 0;
   right: 0;
   overflow: hidden;
-  background-color: #F5F7FA;
+  background-color: #f5f7fa;
 }
 
 .mat-drawer {
@@ -27,7 +27,7 @@
   padding: 10px;
 }
 
-.logo{
+.logo {
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
@@ -44,8 +44,22 @@
 }
 
 .close-menu {
-  position: absolute;
-  right: 26px;
+  right: 78px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    margin-left: 13px;
+    color: #666666;
+  }
 }
 
 .takaoLabs {
@@ -54,8 +68,8 @@
   left: 34px;
 }
 
-.position-fixed{
-  position: fixed
+.position-fixed {
+  position: fixed;
 }
 
 .menu {
@@ -63,13 +77,53 @@
   align-content: center;
   flex-wrap: nowrap;
   align-items: center;
-  background-color: #F5F7FA;
+  background-color: #f5f7fa;
   height: 60px;
   padding: 4px 9px 0px 12px;
   h1 {
     font-size: 16px;
-    color: #2F2F2F;
+    color: #2f2f2f;
     font-weight: 500;
     padding: 17px 0px 0px 0px;
   }
 }
+
+.toolbar-menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.input-pesquisa {
+  font-size: 13px;
+  line-height: 15px;
+  margin-top: 13px;
+
+
+
+
+  mat-form-field {
+    min-width: 391px;
+
+  }
+}
+
+::ng-deep {
+  .mat-form-field-infix {
+      border: 0px !important;
+  }
+  .mat-form-field-appearance-outline .mat-select-arrow-wrapper {
+      transform: none !important;
+  }
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #F8F8F8;
+    background-color: #F8F8F8;
+    border-radius: 5px;
+  }
+}
+
+
