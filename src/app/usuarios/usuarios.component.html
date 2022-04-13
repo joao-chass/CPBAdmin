@@ -87,6 +87,7 @@
                 <button
                   mat-button
                   color="{{ info.statususuario ? 'primary' : 'accent' }}"
+                  (click)="editarUsuario(info)"
                 >
                   {{ info.statususuario ? "Ativo" : "Bloqueado" }}
                 </button>
@@ -126,16 +127,15 @@
         <span class="example-list-section">
           <div *ngFor="let subtask of permissoes">
             <mat-checkbox
-              [(ngModel)]="subtask.completed"
-              (ngModelChange)="updateAllComplete()"
+              [(ngModel)]="subtask.permisao"
             >
               {{ subtask.name }}
             </mat-checkbox>
           </div>
         </span>
 
-        <button mat-button class="button-filter">Aplicar</button>
-        <button mat-button class="button-filter">Limpar</button>
+        <button mat-button class="button-filter" (click)="filtroPermissoes()">Aplicar</button>
+        <button mat-button class="button-filter" (click)="limparFiltorsPermissao()">Limpar</button>
       </div>
 
       <mat-divider></mat-divider>
@@ -144,20 +144,20 @@
         <h2>STATUS</h2>
 
         <span class="example-list-section">
-          <div>
-            <mat-checkbox>
-            Ativo
-            </mat-checkbox>
-          </div>
-          <div>
-            <mat-checkbox>
-              Bloqueado
-              </mat-checkbox>
-          </div>
+          <mat-radio-group aria-label="Select an option" [(ngModel)]="queryStatusUsuario">
+            <div>
+              <mat-radio-button value=true >Ativo</mat-radio-button>
+            </div>
+
+            <div style="margin-top: 10px;">
+              <mat-radio-button value=false>Bloqueado</mat-radio-button>
+            </div>
+          </mat-radio-group>
+
         </span>
 
-        <button mat-button class="button-filter">Aplicar</button>
-        <button mat-button class="button-filter">Limpar</button>
+        <button mat-button class="button-filter" (click)="buscarStatusUsuarios()">Aplicar</button>
+        <button mat-button class="button-filter" (click)="queryStatusUsuario = ''">Limpar</button>
       </div>
 
 
@@ -170,7 +170,7 @@
           Essa ação remove todos os filtros aplicados.
         </p>
 
-        <button mat-button class="button-clen-filter">Limpar todos os filtros</button>
+        <button mat-button class="button-clen-filter" (click)="limparTodosOsFiltros()">Limpar todos os filtros</button>
       </div>
     </mat-card>
   </div>

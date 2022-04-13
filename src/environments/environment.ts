@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'https://grupocpb.org/api'
+  api: 'http://localhost:2000/api'
 };
 
 /*

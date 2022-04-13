@@ -31,4 +31,8 @@ export class UsuariosService {
     return this.http.get(`${this.api}/get-permissoes`)
   }
 
+  filtrarUsuarios(permissoes): Observable<any> {
+    return this.http.post(`${this.api}/query-usuario`, { permissoes})
+  }
+
 }

@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-usuarios',
@@ -14,20 +15,24 @@ import { MatIconRegistry } from '@angular/material/icon';
 export class UsuariosComponent implements OnInit {
   info;
   displayedColumns: string[] = ['id', 'iconUser', 'nome', 'email', 'cpf', 'statusUsuario'];
-  dataSource;
+  dataSource = new MatTableDataSource(ELEMENT_DATA);;
   numeroDeUsuario!: number;
+  queryStatusUsuario!: string;
   permissoes = [
-    {name: 'Admin', completed: false, color: 'primary'},
-    {name: 'Redatores', completed: false, color: 'accent'},
-    {name: 'Convidados', completed: false, color: 'warn'}
+    {name: 'Edição Usuarios', id: 1, permisao: false},
+    {name: 'Relatorios', id: 2, permisao: false},
+    {name: 'Noticias', id: 3, permisao: false},
+    {name: 'Votação', id: 4, permisao: false},
+    {name: 'Transparencia', id: 5, permisao: false},
   ]
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(
-    private usuarios: UsuariosService,
+    private usuariosService: UsuariosService,
     private router: Router,
-    iconRegistry: MatIconRegistry, sanitizer: DomSanitizer
+    iconRegistry: MatIconRegistry, sanitizer: DomSanitizer,
+    private _snackBar: MatSnackBar
   ) {
     iconRegistry.addSvgIcon(
       'my-star-icon',
@@ -35,11 +40,16 @@ export class UsuariosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.usuarios.getUsers().subscribe(res => {
-      this.numeroDeUsuario = res.length;
+    this.buscaUsers();
+  }
 
+
+  buscaUsers() {
+    this.usuariosService.getUsers().subscribe(res => {
+      this.numeroDeUsuario = res.length;
       this.dataSource = new MatTableDataSource<UsuarioElemento>(res);
       this.dataSource.paginator = this.paginator;
+
     });
   }
 
@@ -67,12 +77,61 @@ export class UsuariosComponent implements OnInit {
 
     }
 
+    filtroPermissoes() {
+      const filtro = []
+      this.permissoes.forEach(x => {
+        if(x.permisao) {
+          filtro.push(x.id);
+        }
+      })
+
+      if(filtro.length) {
+        this.usuariosService.filtrarUsuarios(filtro).subscribe(res => {
+          this.dataSource = new MatTableDataSource<UsuarioElemento>(res);
+          this.dataSource.paginator = this.paginator;
+        })
+      } else {
+        this.openSnackBar('prrencha os campos', 'ok')
+      }
+
+
+    }
+
+    limparFiltorsPermissao() {
+      this.permissoes.forEach(x => x.permisao = false);
+      this.buscaUsers();
+    }
+
+
+    buscarStatusUsuarios() {
+      if(this.queryStatusUsuario) {
+        const filterValue = this.queryStatusUsuario;
+        this.dataSource.filter = filterValue.trim().toLowerCase();
+      } else {
+        this.openSnackBar('prrencha os campos', 'ok')
+      }
+    }
+
+
+    limparTodosOsFiltros() {
+      this.queryStatusUsuario = '';
+      this.limparFiltorsPermissao();
+    }
+
+    openSnackBar(message: string, action: string) {
+      this._snackBar.open(message, action, {
+        duration: 2000,
+      });
+    }
 
 }
+
+const ELEMENT_DATA: UsuarioElemento[] = [];
 
 export interface UsuarioElemento {
   nome: string;
   email: number;
   cpf: string;
   usuarioid: number;
+  statususuario: boolean;
 }
