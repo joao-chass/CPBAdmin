@@ -21,11 +21,11 @@
 
     </mat-sidenav>
 
-    <mat-toolbar  color="dark" >
+    <mat-toolbar style="background-color: #FFF;">
       <button mat-icon-button data-toggle="collapse" (click)="sidenav.open()" *ngIf="!sidenav.opened"><mat-icon >menu</mat-icon></button>
 
       <div class="close-menu">
-        <button matTooltip="Sair" (click)="logout()"  mat-mini-fab color="warn" > <i class="material-icons">power_settings_new</i></button>
+        <button matTooltip="Sair" (click)="logout()"  mat-mini-fab color="primary" > <i class="material-icons">power_settings_new</i></button>
       </div>
 
     </mat-toolbar>

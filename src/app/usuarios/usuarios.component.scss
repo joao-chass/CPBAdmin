@@ -1,3 +1,10 @@
+.conatainer {
+  display: flex;
+  align-content: flex-start;
+  flex-direction: row;
+}
+
+
 table {
   width: 100%;
 }
@@ -9,13 +16,19 @@ table {
 .titulo {
   display: flex;
   flex-direction: row;
-  margin-bottom: 20px;
   justify-content: space-between;
 }
 
-.text-titulo{
-  display: flex;
-  flex-direction: column;
+.text-titulo {
+  h1 {
+    display: flex;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #2f2f2f;
+  }
 }
 
 .example-form {
@@ -28,3 +41,117 @@ table {
   width: 100%;
 }
 
+.buttonAdd {
+  background: #e9f3fe;
+  border-radius: 5px;
+  color: #415bb8;
+  font-weight: 400;
+}
+
+.header-table {
+  background-color: #2f2f2f00;
+  border: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  /* identical to box height */
+  text-align: center;
+  color: #5f5e5e;
+}
+
+.table-user {
+  background-color: #2f2f2f00;
+  border: none;
+}
+
+.table-body {
+  text-align: center;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: #626262;
+}
+
+.mat-row .mat-cell {
+  border-style: solid;
+  border-color: #f5f7fa;
+  border-radius: 2px;
+  border-width: 0px 0px 4px 0px;
+  background-color: #fff;
+}
+
+.paginacao {
+  background-color: #2f2f2f00;
+  margin-top: 72px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #7a798b;
+}
+
+.text-apresentacao {
+  h1 {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    /* identical to box height */
+
+    /* cor H1 */
+
+    color: #233048;
+  }
+
+  p {
+    /* corpo de texto */
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    /* corpo de texto */
+
+    color: #8d8d8d;
+  }
+}
+
+.ordenacao {
+  display: flex;
+  padding: 2px 1px 4px 5px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #8d8d8d;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+
+  /* corpo de texto */
+
+  color: #8d8d8d;
+
+  i {
+    padding: 3px 0px 0px 5px;
+  }
+}
+
+
+.example-container {
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  border: 1px solid #555;
+}
