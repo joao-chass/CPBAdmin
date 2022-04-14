@@ -20,7 +20,7 @@
     </div>
   </mat-sidenav>
 
-  <mat-toolbar class="toolbar-menu">
+  <mat-toolbar class="toolbar-menu" *ngIf="validar()">
     <button
       mat-icon-button
       data-toggle="collapse"

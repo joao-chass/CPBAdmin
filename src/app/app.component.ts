@@ -12,11 +12,5 @@ export class AppComponent {
 
   constructor(private auth: TokenService) {}
 
-  validar() {
-    if (this.auth.isLoggedIn()) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+
 }

@@ -12,7 +12,7 @@ interface Food {
 @Component({
   selector: 'app-menu-bar',
   templateUrl: './menu-bar.component.html',
-  styleUrls: ['./menu-bar.component.scss']
+  styleUrls: ['./menu-bar.component.scss'],
 })
 export class MenuBarComponent implements OnInit {
   @ViewChild('sidenav', { static: false }) sidenav: MatSidenav;
@@ -22,21 +22,26 @@ export class MenuBarComponent implements OnInit {
   carregando: boolean = true;
   ongSelecionada = 0;
   foods: Food[] = [
-    {value: 0, viewValue: 'ONG Pais Afetivos'},
-    {value: 1, viewValue: 'ONG CPB'},
-    {value: 2, viewValue: 'Globall ORG'},
-    {value: 3, viewValue: 'ONG LGBT+'},
+    { value: 0, viewValue: 'ONG Pais Afetivos' },
+    { value: 1, viewValue: 'ONG CPB' },
+    { value: 2, viewValue: 'Globall ORG' },
+    { value: 3, viewValue: 'ONG LGBT+' },
   ];
 
-  constructor(private route: Router, private usuariosService: UsuariosService) { }
+  constructor(
+    private route: Router,
+    private usuariosService: UsuariosService,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
+    this.validar();
     const id = localStorage.getItem('dados');
-    this.usuariosService.getuserById(id).subscribe(res => {
+    this.usuariosService.getuserById(id).subscribe((res) => {
       console.log(res);
       this.nome = res.responseObj[0].nome;
       this.carregando = false;
-    })
+    });
   }
 
   close(reason: string) {
@@ -49,4 +54,11 @@ export class MenuBarComponent implements OnInit {
     this.route.navigateByUrl('/login');
   }
 
+  public validar(): boolean {
+    if (this.router.url != '/login' && this.route.url != '/recuperar-senha') {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
