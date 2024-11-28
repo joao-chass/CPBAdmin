@@ -24,13 +24,6 @@ This is a web-based administrative system built with **Angular 10.1.1**. It offe
 - **Authentication**: Token-based system with Auth Guard
 - **Data Visualization**: Integrated graph and chart libraries for user statistics
 
-## Installation and Setup
-
-1. Clone this repository:
-   ```bash
-   git clone <repository-url>
-   cd <repository-folder>
-
 
 
 
